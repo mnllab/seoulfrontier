@@ -7,25 +7,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* 기본 폰트를 Inter와 Noto Sans KR로 설정 */
+        /* 기본 폰트를 IBM Plex Sans KR로 설정 */
         body {
-            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            font-family: 'IBM Plex Sans KR', sans-serif;
         }
         /* 섹션 제목 스타일 */
         .section-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
+            font-family: 'IBM Plex Sans KR', sans-serif;
+            font-weight: 600;
         }
         /* 딥블루와 골드 색상 테마 */
         .bg-deep-blue { background-color: #0d1b3e; }
         .text-gold { color: #d4af37; }
         .border-gold { border-color: #d4af37; }
         .hover-gold:hover { color: #e6c667; }
+        .bg-gold { background-color: #d4af37; }
         /* 헤더 그림자 효과 */
         .header-shadow {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        /* 히어로 섹션 배경 이미지 */
+        #hero {
+            background-image: linear-gradient(rgba(13, 27, 62, 0.8), rgba(13, 27, 62, 0.8)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
@@ -67,9 +74,9 @@
 
     <main>
         <!-- 히어로 섹션 -->
-        <section id="hero" class="bg-deep-blue text-white h-screen flex items-center justify-center">
+        <section id="hero" class="text-white h-screen flex items-center justify-center">
             <div class="text-center px-4">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
                     <span class="text-gold">딥테크 창업</span>의 사각지대를 해소하고<br>
                     <span class="text-gold">글로벌 유니콘</span>을 키우는 엑셀러레이터
                 </h1>
@@ -116,37 +123,68 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                     <!-- 박성철 대표 -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md">
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
                         <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.C+Park" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="박성철 대표이사">
                         <h3 class="text-xl font-bold text-deep-blue">박성철</h3>
                         <p class="text-gold font-semibold mb-2">대표이사</p>
                         <p class="text-sm text-gray-600">前 엔카 창업자(CEO)<br>現 서울대학교 객원교수<br>경영/성장/투자전략 전문가</p>
                     </div>
                     <!-- 이기종 이사 -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md">
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
                         <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=G.J+Lee" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="이기종 이사">
                         <h3 class="text-xl font-bold text-deep-blue">이기종</h3>
                         <p class="text-gold font-semibold mb-2">이사</p>
                         <p class="text-sm text-gray-600">M&A 전문가<br>前 화이텍인베스트먼트 대표<br>재무/투자 분야 전문성 보유</p>
                     </div>
                     <!-- 유승만 이사 -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md">
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
                         <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.M+Yoo" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="유승만 이사">
                         <h3 class="text-xl font-bold text-deep-blue">유승만</h3>
                         <p class="text-gold font-semibold mb-2">이사</p>
                         <p class="text-sm text-gray-600">글로벌 비즈니스 전문가<br>(주)티엘월드와이드 대표<br>엔젤투자 및 경영 경험 보유</p>
                     </div>
                     <!-- 조우주 감사 -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md">
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
                         <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=W.J+Cho" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="조우주 감사">
                         <h3 class="text-xl font-bold text-deep-blue">조우주</h3>
                         <p class="text-gold font-semibold mb-2">감사</p>
                         <p class="text-sm text-gray-600">스파코사 창업, M&A 경험<br>투자 유치 및 사업 개발 전문가</p>
                     </div>
                 </div>
-                <div class="mt-20 text-center max-w-3xl mx-auto p-8 bg-deep-blue text-white rounded-lg">
-                    <h3 class="text-2xl font-bold text-gold mb-4">창업성장자문단</h3>
-                    <p>SFi는 기술, 경영, 재무, 법률 등 각 분야에서 검증된 20인 이상의 서울대 동문 전문가로 구성된 '창업성장자문단'의 지원을 받아, 스타트업이 직면하는 모든 문제에 대한 실질적인 해결책을 제공합니다.</p>
+                <div class="mt-20 text-center max-w-5xl mx-auto p-10 bg-gray-50 rounded-lg border">
+                    <h3 class="text-3xl font-bold text-deep-blue mb-2">창업성장자문단</h3>
+                     <p class="text-gray-600 mb-8">SFi는 서울대 동문 중심의 업계 최고 전문가 네트워크를 통해<br>스타트업이 직면하는 모든 문제에 대한 실질적인 해결책을 제공합니다.</p>
+
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
+                        <div class="text-center">
+                            <h4 class="text-lg font-semibold text-gold">단장</h4>
+                            <p class="text-xl font-bold text-deep-blue">이종수</p>
+                            <p class="text-sm text-gray-500">現 서울대 연구교수<br>기술창업 교육 전문가</p>
+                        </div>
+                         <div class="w-px h-16 bg-gray-300 hidden md:block"></div>
+                        <div class="text-center">
+                            <h4 class="text-lg font-semibold text-gold">부단장</h4>
+                            <p class="text-xl font-bold text-deep-blue">김장길</p>
+                            <p class="text-sm text-gray-500">現 서울대 산학협력교수<br>기술창업 교육/멘토링 전문가</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full border-t border-gray-200 my-8"></div>
+
+                    <h4 class="text-xl font-semibold text-deep-blue mb-6">분야별 전문 자문단 (총 20인 이상)</h4>
+                    <div class="flex flex-wrap justify-center gap-4 text-gray-700">
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">경영컨설팅 (3인)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">기술창업 (2인)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">벤처투자 (2인)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">화학소재 (2인)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">특허/DB (1인)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">소프트웨어 (1인)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">핀테크 (1인)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">AI/ICT (1인)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">M&A (1인)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">법률/특허 (1인)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">기타 다수</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -156,10 +194,10 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl section-title text-deep-blue">INVESTMENT STRATEGY</h2>
-                    <p class="mt-4 text-lg text-gray-600">체계적인 모델로 스타트업의 성공을 설계합니다.</p>
+                    <p class="mt-4 text-lg text-gray-600">SFi의 핵심 가치는 혁신, 탁월함, 글로벌, 그리고 가치 창출입니다.</p>
                 </div>
                 <!-- 4대 핵심가치 -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="p-6 text-center">
                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
@@ -189,41 +227,6 @@
                         <p class="text-gray-600">지속가능한 가치 창출, 산업 혁신 선도, 미래 성장 동력 발굴</p>
                     </div>
                 </div>
-
-                <!-- 4단계 사업모델 -->
-                <div class="relative max-w-5xl mx-auto">
-                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gold/50 -translate-y-1/2"></div>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-                        <div class="text-center p-4">
-                            <div class="relative mb-4">
-                               <div class="w-16 h-16 bg-deep-blue text-gold rounded-full flex items-center justify-center mx-auto text-2xl font-bold border-4 border-gold">1</div>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2 text-deep-blue">발굴</h3>
-                            <p class="text-gray-600">네트워크 기반 유망 창업팀 선별 및 공동 발굴</p>
-                        </div>
-                        <div class="text-center p-4">
-                            <div class="relative mb-4">
-                               <div class="w-16 h-16 bg-deep-blue text-gold rounded-full flex items-center justify-center mx-auto text-2xl font-bold border-4 border-gold">2</div>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2 text-deep-blue">육성</h3>
-                            <p class="text-gray-600">맞춤형 교육 및 스케일업 로드맵, 실전형 멘토링</p>
-                        </div>
-                        <div class="text-center p-4">
-                             <div class="relative mb-4">
-                               <div class="w-16 h-16 bg-deep-blue text-gold rounded-full flex items-center justify-center mx-auto text-2xl font-bold border-4 border-gold">3</div>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2 text-deep-blue">투자</h3>
-                            <p class="text-gray-600">직접 투자 실행, 후속 투자자 연계를 통한 성장 지원</p>
-                        </div>
-                        <div class="text-center p-4">
-                            <div class="relative mb-4">
-                               <div class="w-16 h-16 bg-deep-blue text-gold rounded-full flex items-center justify-center mx-auto text-2xl font-bold border-4 border-gold">4</div>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2 text-deep-blue">성장</h3>
-                            <p class="text-gray-600">경영 안정화, 스케일업 지원, M&A 및 회수 전략</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -236,21 +239,23 @@
                     <p class="mt-2 text-sm text-gray-500">(본 섹션은 현재 예시이며, 투자 기업 정보는 곧 업데이트될 예정입니다.)</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 포트폴리오 아이템 예시 -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x150/0d1b3e/FFFFFF?text=Startup+A+Logo" class="rounded-md mb-4" alt="Startup A Logo">
+                    <!-- 포트폴리오 아이템 예시 1 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="AI 비전 솔루션">
                         <h3 class="text-xl font-bold text-deep-blue">AI 비전 솔루션</h3>
                         <p class="text-sm font-semibold text-gold mb-2">#AI #빅데이터</p>
                         <p class="text-gray-600">산업용 AI 비전 솔루션 개발. SFi의 시드 투자 및 밸류업 프로그램을 통해 주요 대기업과 PoC를 진행하며 빠르게 성장 중입니다.</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x150/0d1b3e/FFFFFF?text=Startup+B+Logo" class="rounded-md mb-4" alt="Startup B Logo">
+                    <!-- 포트폴리오 아이템 예시 2 (이미지 변경) -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="차세대 에너지">
                         <h3 class="text-xl font-bold text-deep-blue">차세대 에너지</h3>
                         <p class="text-sm font-semibold text-gold mb-2">#기후테크 #에너지</p>
                         <p class="text-gray-600">차세대 폐배터리 재활용 기술 개발. SFi의 네트워크를 통해 글로벌 파트너사와 협력 관계를 구축하고 시리즈 A 투자를 준비하고 있습니다.</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x150/0d1b3e/FFFFFF?text=Startup+C+Logo" class="rounded-md mb-4" alt="Startup C Logo">
+                    <!-- 포트폴리오 아이템 예시 3 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="디지털 헬스케어">
                         <h3 class="text-xl font-bold text-deep-blue">디지털 헬스케어</h3>
                         <p class="text-sm font-semibold text-gold mb-2">#바이오 #헬스케어</p>
                         <p class="text-gray-600">희귀질환 진단 플랫폼 개발. SFi 자문단의 멘토링을 통해 기술 상용화에 박차를 가하고 있습니다.</p>
@@ -296,17 +301,8 @@
                 </div>
                 <div class="max-w-4xl mx-auto space-y-8">
                      <div class="p-6 border-b border-gray-200">
-                        <p class="text-sm text-gray-500 mb-1">2025.05.20 | 보도자료</p>
+                        <p class="text-sm text-gray-500 mb-1">2025.05.20 | 소식</p>
                         <a href="#" class="text-xl font-bold text-deep-blue hover-gold">SFi, 서울대학교 창업보육센터 입주... "딥테크 스타트업 육성 본격화"</a>
-                    </div>
-                    <div class="p-6 border-b border-gray-200">
-                        <p class="text-sm text-gray-500 mb-1">2025.07.15 | 행사</p>
-                        <a href="#" class="text-xl font-bold text-deep-blue hover-gold">제1회 SFi 데모데이 개최 예고... 유망 스타트업 5개사 IR 발표</a>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-sm text-gray-500 mb-1">2025.08.01 | 소식</p>
-                        <a href="#" class="text-xl font-bold text-deep-blue hover-gold">SFi, 유망 기술기업 공동 발굴을 위한 파트너십 확대</a>
-                    </div>
                 </div>
             </div>
         </section>
@@ -318,43 +314,29 @@
                     <h2 class="text-4xl md:text-5xl section-title text-white">CONTACT US</h2>
                     <p class="mt-4 text-lg text-gray-300">새로운 지평을 열어갈 혁신적인 창업가와 파트너를 기다립니다.</p>
                 </div>
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-                    <div>
-                        <h3 class="text-2xl font-bold text-gold mb-4">문의 정보</h3>
-                        <p class="mb-4">일반 문의, 투자 제안, 파트너 제안 등 SFi와의 협력을 원하시면 언제든지 연락 주시기 바랍니다.</p>
-                        <div class="space-y-4">
-                            <p><strong>Email:</strong> <a href="mailto:contact@seoulfrontier.com" class="hover-gold">contact@seoulfrontier.com</a></p>
-                            <p><strong>Phone:</strong> <a href="tel:+82-10-5497-2063" class="hover-gold">+82-10-5497-2063</a></p>
-                            <p><strong>Address:</strong> 서울특별시 관악구 관악로 1, 서울대학교 창업보육센터</p>
-                        </div>
-                    </div>
-                    <form>
-                        <div class="mb-4">
-                            <label for="name" class="block mb-2">이름 / 기업명</label>
-                            <input type="text" id="name" class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold">
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="block mb-2">이메일</label>
-                            <input type="email" id="email" class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold">
-                        </div>
-                        <div class="mb-4">
-                            <label for="message" class="block mb-2">문의 내용</label>
-                            <textarea id="message" rows="5" class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-gold text-deep-blue font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-all">
-                            문의 보내기
-                        </button>
-                    </form>
+                <div class="max-w-4xl mx-auto flex flex-col items-center">
+                    <p class="text-center text-gray-300 mb-8">
+                        투자 및 파트너십 관련 문의는 SFi 카카오톡 채널을 통해 가장 빠르게 답변 받으실 수 있습니다.<br>
+                        SFi는 언제나 새로운 기회에 열려있습니다.
+                    </p>
+                    <a href="#" class="w-full sm:w-auto flex items-center justify-center bg-yellow-400 text-gray-900 font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 transition-all text-lg">
+                        <svg class="w-7 h-7 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12c0 3.303 1.632 6.223 4.141 8.125-.03.064-.061.127-.091.191L4.25 23.333a.5.5 0 00.651.651l3.017-1.799c.097.042.195.082.294.12A9.991 9.991 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm-1.25 9.125a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5zm4.375 0a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5z"/></svg>
+                        <span>SFi 카카오톡 채널 문의</span>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- 푸터 -->
-    <footer class="bg-gray-900 text-gray-400 py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Seoul Frontier Investment. All Rights Reserved.</p>
-            <p class="text-sm mt-2">WWW.SEOULFRONTIER.COM</p>
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p class="font-bold text-lg text-white mb-2">서울프론티어인베스트먼트(주)</p>
+            <p>대표이사: 박성철 | 사업자등록번호: 318-88-03207</p>
+            <p>본사: 경기도 성남시 중원구 성남대로 1133, 637호</p>
+            <p>창업성장지원센터: 서울특별시 강서구 공항대로 186, 1305호</p>
+            <p>E. <a href="mailto:seoulfrontier@gmail.com" class="hover-gold">seoulfrontier@gmail.com</a> | T. <a href="tel:0502-1919-0921" class="hover-gold">0502-1919-0921</a></p>
+            <p class="mt-4">&copy; 2025 Seoul Frontier Investment. All Rights Reserved.</p>
         </div>
     </footer>
 
