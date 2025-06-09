@@ -1,451 +1,111 @@
-<!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SFi - Seoul Frontier Investment</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* 기본 폰트를 IBM Plex Sans KR로 설정 */
-        body {
-            font-family: 'IBM Plex Sans KR', sans-serif;
-        }
-        /* 섹션 제목 스타일 */
-        .section-title {
-            font-family: 'IBM Plex Sans KR', sans-serif;
-            font-weight: 600;
-        }
-        /* 딥블루와 골드 색상 테마 */
-        .bg-deep-blue { background-color: #0d1b3e; }
-        .text-gold { color: #d4af37; }
-        .border-gold { border-color: #d4af37; }
-        .hover-gold:hover { color: #e6c667; }
-        .bg-gold { background-color: #d4af37; }
-        /* 헤더 그림자 효과 */
-        .header-shadow {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-        }
-        /* 히어로 섹션 배경 이미지 */
-        #hero {
-            background-image: linear-gradient(rgba(13, 27, 62, 0.8), rgba(13, 27, 62, 0.8)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
-</head>
-<body class="bg-white text-gray-800">
+<!-- 문의하기 (Contact) -->
+<section id="contact" class="py-20 md:py-32 bg-deep-blue text-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl section-title text-white">CONTACT US</h2>
+      <p class="mt-4 text-lg text-gray-300">새로운 지평을 열어갈 혁신적인 창업가와 파트너를 기다립니다.</p>
+    </div>
+    <div class="max-w-4xl mx-auto">
+      <!-- 카카오톡 채널 문의 -->
+      <div class="text-center">
+        <h3 class="text-2xl font-bold text-gold mb-4">카카오톡 채널 문의</h3>
+        <p class="text-center text-gray-300 mb-8">
+          더욱 간편하고 신속한 상담을 원하시면<br>SFi 카카오톡 채널로 문의해 주세요.
+        </p>
+        <a href="#" class="inline-flex items-center justify-center bg-yellow-400 text-gray-900 font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 transition-all text-lg">
+          <svg class="w-7 h-7 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.486 2 2 6.486 2 12c0 3.303 1.632 6.223 4.141 8.125-.03.064-.061.127-.091.191L4.25 23.333a.5.5 0 00.651.651l3.017-1.799c.097.042.195.082.294.12A9.991 9.991 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm-1.25 9.125a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5zm4.375 0a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5z"/>
+          </svg>
+          <span>SFi 카카오톡 채널 바로가기</span>
+        </a>
+      </div>
 
-    <!-- 헤더 및 네비게이션 -->
-    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 w-full header-shadow">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-deep-blue">
-                SFi
-            </a>
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="text-gray-600 hover-gold transition-colors">회사소개</a>
-                <a href="#team" class="text-gray-600 hover-gold transition-colors">팀</a>
-                <a href="#strategy" class="text-gray-600 hover-gold transition-colors">투자전략</a>
-                <a href="#portfolio" class="text-gray-600 hover-gold transition-colors">포트폴리오</a>
-                <a href="#acceleration" class="text-gray-600 hover-gold transition-colors">창업지원</a>
-                <a href="#news" class="text-gray-600 hover-gold transition-colors">뉴스룸</a>
-                <a href="#contact" class="text-gray-600 hover-gold transition-colors">문의하기</a>
-            </nav>
-            <!-- 모바일 메뉴 버튼 -->
-            <button id="mobile-menu-btn" class="md:hidden text-deep-blue">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
+      <!-- 구분선 -->
+      <div class="flex items-center my-12">
+        <div class="flex-grow border-t border-gray-600"></div>
+        <span class="flex-shrink mx-4 text-gray-400">OR</span>
+        <div class="flex-grow border-t border-gray-600"></div>
+      </div>
+
+      <!-- 문의 폼 -->
+      <div class="bg-gray-50/10 p-8 sm:p-12 rounded-lg">
+        <h3 class="text-2xl font-bold text-center text-white mb-8">투자·파트너십·기타 문의</h3>
+        <form id="contact-form">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="name" class="block mb-2 font-medium">이름 / 기업명</label>
+              <input type="text" id="name" name="name" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+            </div>
+            <div>
+              <label for="email" class="block mb-2 font-medium">이메일</label>
+              <input type="email" id="email" name="email" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+            </div>
+            <div>
+              <label for="phone" class="block mb-2 font-medium">연락처</label>
+              <input type="tel" id="phone" name="phone" class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+            </div>
+            <div>
+              <label for="inquiryType" class="block mb-2 font-medium">문의 유형</label>
+              <select id="inquiryType" name="inquiryType" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                <option>투자 제안</option>
+                <option>파트너십 제안</option>
+                <option>일반 문의</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block mb-2 font-medium">문의 내용</label>
+            <textarea id="message" name="message" rows="5" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="submit-btn w-full sm:w-auto bg-gold text-deep-blue font-bold py-3 px-10 rounded-full hover:bg-yellow-500 transition-all text-lg">
+              문의 접수
             </button>
-        </div>
-        <!-- 모바일 메뉴 -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-600 hover-gold">회사소개</a>
-            <a href="#team" class="block py-2 text-gray-600 hover-gold">팀</a>
-            <a href="#strategy" class="block py-2 text-gray-600 hover-gold">투자전략</a>
-            <a href="#portfolio" class="block py-2 text-gray-600 hover-gold">포트폴리오</a>
-            <a href="#acceleration" class="block py-2 text-gray-600 hover-gold">창업지원</a>
-            <a href="#news" class="block py-2 text-gray-600 hover-gold">뉴스룸</a>
-            <a href="#contact" class="block py-2 text-gray-600 hover-gold">문의하기</a>
-        </div>
-    </header>
+          </div>
+        </form>
+        <div id="form-status" class="text-center mt-6"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <main>
-        <!-- 히어로 섹션 -->
-        <section id="hero" class="text-white h-screen flex items-center justify-center">
-            <div class="text-center px-4">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-                    <span class="text-gold">딥테크 창업</span>의 사각지대를 해소하고<br>
-                    <span class="text-gold">글로벌 유니콘</span>을 키우는 엑셀러레이터
-                </h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                    서울프론티어인베스트먼트(SFi)는 서울대 동문 네트워크와 기술 전문성을 기반으로, 대한민국을 대표하는 기술창업의 허브로 나아갑니다.
-                </p>
-                <a href="#about" class="mt-8 inline-block bg-gold text-deep-blue font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-all">
-                    SFi 더 알아보기
-                </a>
-            </div>
-        </section>
+<script>
+  // 문의하기 폼 제출 스크립트
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  const submitBtn = contactForm.querySelector('.submit-btn');
 
-        <!-- 회사소개 (About Us) -->
-        <section id="about" class="py-20 md:py-32 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ABOUT US</h2>
-                    <p class="mt-4 text-lg text-gray-600">SFi는 기술과 창업, 그리고 성장을 연결합니다.</p>
-                </div>
-                <div class="max-w-4xl mx-auto">
-                    <p class="text-lg text-center text-gray-700 mb-12">
-                        서울프론티어인베스트먼트(SFi)는 'SNU공학기술 유니콘발굴투자조합'의 성공 경험을 바탕으로, 딥테크 분야의 유망 초기 창업기업을 발굴하고 함께 성장하는 지속가능한 투자 생태계를 구축하고자 설립되었습니다. 우리는 서울대학교의 우수한 인재와 기술력을 창업과 연결하고, 검증된 전문성과 네트워크를 통해 혁신 기술 스타트업이 글로벌 유니콘 기업으로 성장하도록 강력하게 지원하는 기술창업의 허브가 되겠습니다.
-                    </p>
-                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-                        <h3 class="text-2xl font-bold text-deep-blue mb-6 text-center">기업 개요</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
-                            <div class="p-4 bg-gray-50 rounded-lg"><strong>회사명:</strong> 서울프론티어인베스트먼트(주)</div>
-                            <div class="p-4 bg-gray-50 rounded-lg"><strong>대표이사:</strong> 박성철 (前 엔카 창업자)</div>
-                            <div class="p-4 bg-gray-50 rounded-lg"><strong>설립일:</strong> 2025년 2월</div>
-                            <div class="p-4 bg-gray-50 rounded-lg"><strong>주요인력:</strong> 6명 (임직원 4, 자문 2)</div>
-                            <div class="p-4 bg-gray-50 rounded-lg col-span-1 md:col-span-2"><strong>업태/종목:</strong> 창업지원, 투자자문, 경영컨설팅, 투자조합 운영 등</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzImfJX6P6htca78NPrUPcfZ4fHFjTGlfVtwWQ2_SvtljCCle8b5OXE8gnzRwgWwHFW/exec';
+    const formData = new FormData(contactForm);
 
-        <!-- 팀 (Team) -->
-        <section id="team" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">OUR TEAM</h2>
-                    <p class="mt-4 text-lg text-gray-600">창업부터 성장까지, 최고의 전문가들이 함께합니다.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                    <!-- 박성철 대표 -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
-                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.C+Park" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="박성철 대표이사">
-                        <h3 class="text-xl font-bold text-deep-blue">박성철</h3>
-                        <p class="text-gold font-semibold mb-2">대표이사</p>
-                        <p class="text-sm text-gray-600">前 엔카 창업자(CEO)<br>現 서울대학교 객원교수<br>경영/성장/투자전략 전문가</p>
-                    </div>
-                    <!-- 이기종 이사 -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
-                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=G.J+Lee" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="이기종 이사">
-                        <h3 class="text-xl font-bold text-deep-blue">이기종</h3>
-                        <p class="text-gold font-semibold mb-2">이사</p>
-                        <p class="text-sm text-gray-600">M&A 전문가<br>前 화이텍인베스트먼트 대표<br>재무/투자 분야 전문성 보유</p>
-                    </div>
-                    <!-- 유승만 이사 -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
-                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.M+Yoo" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="유승만 이사">
-                        <h3 class="text-xl font-bold text-deep-blue">유승만</h3>
-                        <p class="text-gold font-semibold mb-2">이사</p>
-                        <p class="text-sm text-gray-600">글로벌 비즈니스 전문가<br>(주)티엘월드와이드 대표<br>엔젤투자 및 경영 경험 보유</p>
-                    </div>
-                    <!-- 조우주 감사 -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
-                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=W.J+Cho" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="조우주 감사">
-                        <h3 class="text-xl font-bold text-deep-blue">조우주</h3>
-                        <p class="text-gold font-semibold mb-2">감사</p>
-                        <p class="text-sm text-gray-600">스파코사 창업, M&A 경험<br>투자 유치 및 사업 개발 전문가</p>
-                    </div>
-                </div>
-                <div class="mt-20 text-center max-w-5xl mx-auto p-10 bg-gray-50 rounded-lg border">
-                    <h3 class="text-3xl font-bold text-deep-blue mb-2">창업성장자문단</h3>
-                     <p class="text-gray-600 mb-8">SFi는 서울대 동문 중심의 업계 최고 전문가 네트워크를 통해<br>스타트업이 직면하는 모든 문제에 대한 실질적인 해결책을 제공합니다.</p>
+    formStatus.textContent = '전송 중...';
+    formStatus.className = 'text-yellow-400';
+    submitBtn.disabled = true;
+    submitBtn.textContent = '전송 중...';
 
-                    <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
-                        <div class="text-center">
-                            <h4 class="text-lg font-semibold text-gold">단장</h4>
-                            <p class="text-xl font-bold text-deep-blue">이종수</p>
-                            <p class="text-sm text-gray-500">現 서울대 산학협력력교수<br>기술창업 전문가</p>
-                        </div>
-                         <div class="w-px h-16 bg-gray-300 hidden md:block"></div>
-                        <div class="text-center">
-                            <h4 class="text-lg font-semibold text-gold">부단장</h4>
-                            <p class="text-xl font-bold text-deep-blue">김장길</p>
-                            <p class="text-sm text-gray-500">現 서울대 연구교수<br>기술창업 전문가</p>
-                        </div>
-                    </div>
-                    
-                    <div class="w-full border-t border-gray-200 my-8"></div>
-
-                    <h4 class="text-xl font-semibold text-deep-blue mb-6">분야별 전문 자문단 (총 20인 이상)</h4>
-                    <div class="flex flex-wrap justify-center gap-4 text-gray-700">
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">경영컨설팅 (3인)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">기술창업 (2인)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">벤처투자 (2인)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">화학소재 (2인)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">특허/DB (1인)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">소프트웨어 (1인)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">핀테크 (1인)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">AI/ICT (1인)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">M&A (1인)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">법률/특허 (1인)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1">기타 다수</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 투자전략 (Investment Strategy) -->
-        <section id="strategy" class="py-20 md:py-32 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">INVESTMENT STRATEGY</h2>
-                    <p class="mt-4 text-lg text-gray-600">SFi의 핵심 가치는 혁신, 탁월함, 글로벌, 그리고 가치 창출입니다.</p>
-                </div>
-                <!-- 4대 핵심가치 -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="p-6 text-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">INNOVATION</h3>
-                        <p class="text-gray-600">유망 기술 발굴 및 검증, 신시장 개척, 혁신적 문제 해결 역량</p>
-                    </div>
-                    <div class="p-6 text-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">EXCELLENCE</h3>
-                        <p class="text-gray-600">전문 투자 심사, 체계적 성장 지원, 차별화된 액셀러레이팅</p>
-                    </div>
-                    <div class="p-6 text-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9M3 12a9 9 0 009 9" /></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">GLOBAL</h3>
-                        <p class="text-gray-600">글로벌 시장 진출 전략, 국제 네트워크 구축, 해외 투자 유치 지원</p>
-                    </div>
-                    <div class="p-6 text-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">VALUATION</h3>
-                        <p class="text-gray-600">지속가능한 가치 창출, 산업 혁신 선도, 미래 성장 동력 발굴</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 포트폴리오 (Portfolio) -->
-        <section id="portfolio" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">PORTFOLIO</h2>
-                    <p class="mt-4 text-lg text-gray-600">SFi와 함께 성장하는 혁신 기업들을 소개합니다.</p>
-                    <p class="mt-2 text-sm text-gray-500">(본 섹션은 현재 예시이며, 투자 기업 정보는 곧 업데이트될 예정입니다.)</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 포트폴리오 아이템 예시 1 -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="AI 비전 솔루션">
-                        <h3 class="text-xl font-bold text-deep-blue">AI 비전 솔루션</h3>
-                        <p class="text-sm font-semibold text-gold mb-2">#AI #빅데이터</p>
-                        <p class="text-gray-600">산업용 AI 비전 솔루션 개발. SFi의 시드 투자 및 밸류업 프로그램을 통해 주요 대기업과 PoC를 진행하며 빠르게 성장 중입니다.</p>
-                    </div>
-                    <!-- 포트폴리오 아이템 예시 2 (이미지 변경) -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="차세대 에너지">
-                        <h3 class="text-xl font-bold text-deep-blue">차세대 에너지</h3>
-                        <p class="text-sm font-semibold text-gold mb-2">#기후테크 #에너지</p>
-                        <p class="text-gray-600">차세대 폐배터리 재활용 기술 개발. SFi의 네트워크를 통해 글로벌 파트너사와 협력 관계를 구축하고 시리즈 A 투자를 준비하고 있습니다.</p>
-                    </div>
-                    <!-- 포트폴리오 아이템 예시 3 -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="디지털 헬스케어">
-                        <h3 class="text-xl font-bold text-deep-blue">디지털 헬스케어</h3>
-                        <p class="text-sm font-semibold text-gold mb-2">#바이오 #헬스케어</p>
-                        <p class="text-gray-600">희귀질환 진단 플랫폼 개발. SFi 자문단의 멘토링을 통해 기술 상용화에 박차를 가하고 있습니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 창업지원 프로그램 (Acceleration) -->
-        <section id="acceleration" class="py-20 md:py-32 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ACCELERATION</h2>
-                    <p class="mt-4 text-lg text-gray-600">단순한 투자를 넘어, 성장의 모든 과정을 함께합니다.</p>
-                </div>
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-deep-blue mb-3">사업모델 고도화</h3>
-                        <p>시장 분석, BM 피봇팅, 수익 모델 검증 등 사업의 핵심을 강화합니다.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-deep-blue mb-3">실전형 멘토링</h3>
-                        <p>IR 피칭, 정부지원사업 계획서 작성 및 발표 코칭으로 실전 역량을 키웁니다.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-deep-blue mb-3">네트워크 연계</h3>
-                        <p>후속 투자 유치, 기술/사업 파트너십 연결 등 성장의 기회를 제공합니다.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-deep-blue mb-3">경영 인프라 지원</h3>
-                        <p>법률, 특허, 재무, 회계 등 초기 기업에 필수적인 경영 인프라를 자문합니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 뉴스룸 (Newsroom) -->
-        <section id="news" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">NEWSROOM</h2>
-                    <p class="mt-4 text-lg text-gray-600">SFi의 최신 소식을 전해드립니다.</p>
-                </div>
-                <div class="max-w-4xl mx-auto space-y-8">
-                     <div class="p-6 border-b border-gray-200">
-                        <p class="text-sm text-gray-500 mb-1">2025.05.20 | 보도자료</p>
-                        <a href="#" class="text-xl font-bold text-deep-blue hover-gold">SFi, 서울대학교 창업보육센터 입주... "딥테크 스타트업 육성 본격화"</a>
-                    </div>
-<!--                    <div class="p-6 border-b border-gray-200">
-                        <p class="text-sm text-gray-500 mb-1">2025.07.15 | 행사</p>
-                        <a href="#" class="text-xl font-bold text-deep-blue hover-gold">제1회 SFi 데모데이 개최 예고... 유망 스타트업 5개사 IR 발표</a>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-sm text-gray-500 mb-1">2025.08.01 | 소식</p>
-                        <a href="#" class="text-xl font-bold text-deep-blue hover-gold">SFi, 유망 기술기업 공동 발굴을 위한 파트너십 확대</a>
-                    </div> -->
-                </div>
-            </div>
-        </section>
-
-        <!-- 문의하기 (Contact) -->
-        <section id="contact" class="py-20 md:py-32 bg-deep-blue text-white">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-white">CONTACT US</h2>
-                    <p class="mt-4 text-lg text-gray-300">새로운 지평을 열어갈 혁신적인 창업가와 파트너를 기다립니다.</p>
-                </div>
-                <div class="max-w-4xl mx-auto">
-                    <!-- 카카오톡 채널 문의 -->
-                    <div class="text-center">
-                         <h3 class="text-2xl font-bold text-gold mb-4">카카오톡 채널 문의</h3>
-                         <p class="text-center text-gray-300 mb-8">
-                             더욱 간편하고 신속한 상담을 원하시면<br>SFi 카카오톡 채널로 문의해 주세요.
-                         </p>
-                         <a href="#" class="inline-flex items-center justify-center bg-yellow-400 text-gray-900 font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 transition-all text-lg">
-                             <svg class="w-7 h-7 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12c0 3.303 1.632 6.223 4.141 8.125-.03.064-.061.127-.091.191L4.25 23.333a.5.5 0 00.651.651l3.017-1.799c.097.042.195.082.294.12A9.991 9.991 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm-1.25 9.125a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5zm4.375 0a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5z"/></svg>
-                             <span>SFi 카카오톡 채널 바로가기</span>
-                         </a>
-                    </div>
-
-                    <!-- 구분선 -->
-                    <div class="flex items-center my-12">
-                        <div class="flex-grow border-t border-gray-600"></div>
-                        <span class="flex-shrink mx-4 text-gray-400">OR</span>
-                        <div class="flex-grow border-t border-gray-600"></div>
-                    </div>
-
-                    <!-- 문의 폼 -->
-                    <div class="bg-gray-50/10 p-8 sm:p-12 rounded-lg">
-                        <h3 class="text-2xl font-bold text-center text-white mb-8">투자·파트너십·기타 문의</h3>
-                        <form id="contact-form">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label for="name" class="block mb-2 font-medium">이름 / 기업명</label>
-                                    <input type="text" id="name" name="name" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
-                                </div>
-                                <div>
-                                    <label for="email" class="block mb-2 font-medium">이메일</label>
-                                    <input type="email" id="email" name="email" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
-                                </div>
-                                 <div>
-                                    <label for="phone" class="block mb-2 font-medium">연락처</label>
-                                    <input type="tel" id="phone" name="phone" class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
-                                </div>
-                                <div>
-                                    <label for="inquiryType" class="block mb-2 font-medium">문의 유형</label>
-                                    <select id="inquiryType" name="inquiryType" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
-                                        <option>투자 제안</option>
-                                        <option>파트너십 제안</option>
-                                        <option>일반 문의</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="mb-6">
-                                <label for="message" class="block mb-2 font-medium">문의 내용</label>
-                                <textarea id="message" name="message" rows="5" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white"></textarea>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="w-full sm:w-auto bg-gold text-deep-blue font-bold py-3 px-10 rounded-full hover:bg-yellow-500 transition-all text-lg">
-                                    문의 접수
-                                </button>
-                            </div>
-                        </form>
-                        <div id="form-status" class="text-center mt-6"></div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 푸터 -->
-    <footer class="bg-gray-900 text-gray-400 py-10">
-        <div class="container mx-auto px-6 text-center text-sm">
-            <p class="font-bold text-lg text-white mb-2">서울프론티어인베스트먼트(주)</p>
-            <p>대표이사: 박성철 | 사업자등록번호: 318-88-03207</p>
-            <p>본사: 경기도 성남시 중원구 성남대로 1133, 637호</p>
-            <p>창업성장지원협력센터: 서울특별시 강서구 공항대로 186, 1305호</p>
-            <p>E. <a href="mailto:seoulfrontier@gmail.com" class="hover-gold">seoulfrontier@gmail.com</a> | T. <a href="tel:0502-1919-0921" class="hover-gold">0502-1919-0921</a></p>
-            <p class="mt-4">&copy; 2025 Seoul Frontier Investment. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // 모바일 메뉴 토글 스크립트
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // 모바일 메뉴의 링크 클릭 시 메뉴 닫기
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // 문의하기 폼 제출 스크립트
-        const contactForm = document.getElementById('contact-form');
-        const formStatus = document.getElementById('form-status');
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // ** 중요: 이 URL을 본인의 Google Apps Script 웹 앱 URL로 변경해야 합니다. **
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzImfJX6P6htca78NPrUPcfZ4fHFjTGlfVtwWQ2_SvtljCCle8b5OXE8gnzRwgWwHFW/exec';
-            const formData = new FormData(contactForm);
-
-            formStatus.textContent = '전송 중...';
-            
-            fetch(scriptURL, { method: 'POST', body: formData})
-                .then(response => response.json())
-                .then(data => {
-                    if(data.result === 'success') {
-                        formStatus.textContent = '문의가 성공적으로 접수되었습니다. 곧 연락드리겠습니다.';
-                        formStatus.className = 'text-green-400';
-                        contactForm.reset();
-                    } else {
-                        throw new Error(data.error || 'Unknown error');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    formStatus.textContent = '오류가 발생했습니다. 잠시 후 다시 시도해 주세요.';
-                    formStatus.className = 'text-red-400';
-                });
-        });
-    </script>
-</body>
-</html>
+    fetch(scriptURL, { method: 'POST', body: formData })
+      .then(res => res.json())
+      .then(data => {
+        if (data.result === 'success') {
+          formStatus.textContent = '문의가 성공적으로 접수되었습니다. 곧 연락드리겠습니다.';
+          formStatus.className = 'text-green-400';
+          contactForm.reset();
+        } else {
+          throw new Error(data.error || 'Unknown error');
+        }
+      })
+      .catch(err => {
+        console.error('Error!', err.message);
+        formStatus.textContent = '오류가 발생했습니다. 잠시 후 다시 시도해 주세요.';
+        formStatus.className = 'text-red-400';
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '문의 접수';
+        formStatus.scrollIntoView({ behavior: 'smooth' });
+      });
+  });
+</script>
