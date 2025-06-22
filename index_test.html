@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFi - Seoul Frontier Investment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Set basic font to Inter for English */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Section title style */
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        /* Deep blue and gold color theme */
+        .bg-deep-blue { background-color: #0d1b3e; }
+        .text-gold { color: #d4af37; }
+        .border-gold { border-color: #d4af37; }
+        .hover-gold:hover { color: #e6c667; }
+        .bg-gold { background-color: #d4af37; }
+        /* Header shadow effect */
+        .header-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        /* Hero section background image */
+        #hero {
+            background-image: linear-gradient(rgba(13, 27, 62, 0.8), rgba(13, 27, 62, 0.8)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Language selector styles */
+        .language-dropdown {
+            position: relative;
+        }
+        .language-dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: #374151;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        .dropdown-content a:hover {
+            background-color: #f3f4f6;
+            color: #d4af37;
+        }
+        .flag-icon {
+            width: 20px;
+            height: 14px;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header and Navigation -->
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 w-full header-shadow">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-deep-blue">
+                SFi
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-600 hover-gold transition-colors">About SFi</a>
+                <a href="#team" class="text-gray-600 hover-gold transition-colors">Our Team</a>
+                <a href="#strategy" class="text-gray-600 hover-gold transition-colors">Investment Strategy</a>
+                <a href="#portfolio" class="text-gray-600 hover-gold transition-colors">Portfolio</a>
+                <a href="#acceleration" class="text-gray-600 hover-gold transition-colors">Venture Support</a>
+                <a href="#news" class="text-gray-600 hover-gold transition-colors">News Room</a>
+                <a href="#contact" class="text-gray-600 hover-gold transition-colors">Contact</a>
+                <!-- Language selector -->
+                <div class="language-dropdown">
+                    <button class="flex items-center text-gray-600 hover-gold transition-colors">
+                        <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon">
+                        <span>English</span>
+                        <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="index.html">
+                            <img src="https://flagcdn.com/w20/kr.png" alt="한국어" class="flag-icon inline">
+                            한국어
+                        </a>
+                        <a href="index_en.html">
+                            <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon inline">
+                            English
+                        </a>
+                        <a href="index_cn.html">
+                            <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon inline">
+                            中文
+                        </a>
+                        <a href="index_jp.html">
+                            <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon inline">
+                            日本語
+                        </a>
+                        <a href="index_fr.html">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon inline">
+                            Français
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-deep-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover-gold">About SFi</a>
+            <a href="#team" class="block py-2 text-gray-600 hover-gold">Our Team</a>
+            <a href="#strategy" class="block py-2 text-gray-600 hover-gold">Investment Strategy</a>
+            <a href="#portfolio" class="block py-2 text-gray-600 hover-gold">Portfolio</a>
+            <a href="#acceleration" class="block py-2 text-gray-600 hover-gold">Venture Support</a>
+            <a href="#news" class="block py-2 text-gray-600 hover-gold">News Room</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover-gold">Contact</a>
+            <!-- Mobile language selector -->
+            <div class="mt-4 pt-4 border-t border-gray-200">
+                <p class="text-sm font-medium text-gray-500 mb-2">Language</p>
+                <div class="space-y-2">
+                    <a href="index.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/kr.png" alt="한국어" class="flag-icon">
+                        한국어
+                    </a>
+                    <a href="index_en.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon">
+                        English
+                    </a>
+                    <a href="index_cn.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon">
+                        中文
+                    </a>
+                    <a href="index_jp.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon">
+                        日本語
+                    </a>
+                    <a href="index_fr.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon">
+                        Français
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="text-white h-screen flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                    An accelerator that eliminates blind spots in <span class="text-gold">deep tech startups</span><br>
+                    and fosters <span class="text-gold">global unicorns</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Seoul Frontier Investment (SFi) is a leading technology startup hub in Korea based on the Seoul National University alumni network and technological expertise.
+                </p>
+                <a href="#about" class="mt-8 inline-block bg-gold text-deep-blue font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-all">
+                    Learn More about SFi
+                </a>
+            </div>
+        </section>
+        <!-- About SFi -->
+        <section id="about" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ABOUT SFi</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFi connects technology, entrepreneurship, and growth.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-lg text-center text-gray-700 mb-12">
+                        Seoul Frontier Investment (SFi) was established based on the successful experience of the 'SNU Engineering Technology Unicorn Discovery Investment Association' to discover promising early-stage startups in the deep tech field and build a sustainable investment ecosystem that grows together. SFi will become a hub for technology startups that connects Seoul National University's excellent talent and technological prowess with startups, and strongly supports innovative technology startups to grow into global unicorn companies through proven expertise and networks.
+                    </p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-deep-blue mb-6 text-center">Company Overview</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
+                            <div class="p-4 bg-gray-50 rounded-lg"><strong>Company Name:</strong> Seoul Frontier Investment Co., Ltd.</div>
+                            <div class="p-4 bg-gray-50 rounded-lg"><strong>CEO:</strong> Park Seong-Cheol (founder of EnCar)</div>
+                            <div class="p-4 bg-gray-50 rounded-lg"><strong>Established:</strong> Feb. 2025</div>
+                            <div class="p-4 bg-gray-50 rounded-lg"><strong>Key Personnel:</strong> 6 people (4 executives and staff, 2 advisors)</div>
+                            <div class="p-4 bg-gray-50 rounded-lg col-span-1 md:col-span-2"><strong>Business Type/Item:</strong> Startup support, investment consulting, management consulting, investment association operation, etc.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Team -->
+        <section id="team" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">OUR TEAM</h2>
+                    <p class="mt-4 text-lg text-gray-600">The best experts will be with you from startup to growth.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <!-- Park Seong-Cheol CEO -->
+                    <div class="
