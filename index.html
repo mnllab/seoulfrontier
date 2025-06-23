@@ -52,6 +52,25 @@
             background-size: cover;
             background-position: center;
         }
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .language-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .language-card {
+                padding: 1rem;
+            }
+            .flag-icon {
+                width: 24px;
+                height: 18px;
+            }
+        }
+        @media (max-width: 640px) {
+            .language-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -64,10 +83,9 @@
             <p class="text-gray-300 text-sm mt-2">Detecting your location...</p>
         </div>
     </div>
-
     <!-- Language Selection Screen -->
     <div id="language-selection" class="hidden">
-        <section id="hero" class="text-white h-screen flex items-center justify-center">
+        <section id="hero" class="text-white min-h-screen flex items-center justify-center py-12">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 fade-in">
                     <h1 class="text-4xl md:text-6xl font-bold mb-4 text-gold">SFi</h1>
@@ -75,7 +93,7 @@
                     <p class="text-lg md:text-xl text-gray-300 mb-8">Choose your preferred language</p>
                 </div>
                 
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 fade-in">
+                <div class="max-w-6xl mx-auto language-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
                     <!-- Korean -->
                     <div class="language-card bg-white/10 backdrop-blur-md p-6 rounded-lg text-center shadow-lg" onclick="goToLanguage('kr')">
                         <img src="https://flagcdn.com/w40/kr.png" alt="한국어" class="flag-icon mx-auto mb-4">
@@ -110,6 +128,27 @@
                         <h3 class="text-xl font-bold mb-2">Français</h3>
                         <p class="text-gray-300 text-sm">French</p>
                     </div>
+                    
+                    <!-- Russian -->
+                    <div class="language-card bg-white/10 backdrop-blur-md p-6 rounded-lg text-center shadow-lg" onclick="goToLanguage('ru')">
+                        <img src="https://flagcdn.com/w40/ru.png" alt="Русский" class="flag-icon mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2">Русский</h3>
+                        <p class="text-gray-300 text-sm">Russian</p>
+                    </div>
+                    
+                    <!-- German -->
+                    <div class="language-card bg-white/10 backdrop-blur-md p-6 rounded-lg text-center shadow-lg" onclick="goToLanguage('de')">
+                        <img src="https://flagcdn.com/w40/de.png" alt="Deutsch" class="flag-icon mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2">Deutsch</h3>
+                        <p class="text-gray-300 text-sm">German</p>
+                    </div>
+                    
+                    <!-- Spanish -->
+                    <div class="language-card bg-white/10 backdrop-blur-md p-6 rounded-lg text-center shadow-lg" onclick="goToLanguage('es')">
+                        <img src="https://flagcdn.com/w40/es.png" alt="Español" class="flag-icon mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2">Español</h3>
+                        <p class="text-gray-300 text-sm">Spanish</p>
+                    </div>
                 </div>
                 
                 <div class="text-center mt-12 fade-in">
@@ -126,7 +165,6 @@
             </div>
         </section>
     </div>
-
     <script>
         // Language mapping based on country codes
         const countryLanguageMap = {
@@ -135,22 +173,56 @@
             'US': 'en',    // United States -> English
             'GB': 'en',    // United Kingdom -> English
             'AU': 'en',    // Australia -> English
-            'CA': 'en',    // Canada -> English (default, could be French in some regions)
+            'CA': 'en',    // Canada -> English
             'NZ': 'en',    // New Zealand -> English
             'IE': 'en',    // Ireland -> English
             'ZA': 'en',    // South Africa -> English
+            'IN': 'en',    // India -> English
+            'PH': 'en',    // Philippines -> English
+            'SG': 'en',    // Singapore -> English
+            'MY': 'en',    // Malaysia -> English
             'CN': 'cn',    // China -> Chinese
             'TW': 'cn',    // Taiwan -> Chinese
             'HK': 'cn',    // Hong Kong -> Chinese
             'MO': 'cn',    // Macau -> Chinese
-            'SG': 'en',    // Singapore -> English (could be Chinese, but English is more common for business)
             'JP': 'jp',    // Japan -> Japanese
             'FR': 'fr',    // France -> French
-            'BE': 'fr',    // Belgium -> French (could be Dutch/German)
-            'CH': 'fr',    // Switzerland -> French (could be German/Italian)
+            'BE': 'fr',    // Belgium -> French
+            'CH': 'fr',    // Switzerland -> French (could be German)
             'LU': 'fr',    // Luxembourg -> French
             'MC': 'fr',    // Monaco -> French
-            // Add more countries as needed
+            'SN': 'fr',    // Senegal -> French
+            'CI': 'fr',    // Ivory Coast -> French
+            'CM': 'fr',    // Cameroon -> French
+            'RU': 'ru',    // Russia -> Russian
+            'BY': 'ru',    // Belarus -> Russian
+            'KZ': 'ru',    // Kazakhstan -> Russian
+            'KG': 'ru',    // Kyrgyzstan -> Russian
+            'UZ': 'ru',    // Uzbekistan -> Russian
+            'TJ': 'ru',    // Tajikistan -> Russian
+            'DE': 'de',    // Germany -> German
+            'AT': 'de',    // Austria -> German
+            'LI': 'de',    // Liechtenstein -> German
+            'ES': 'es',    // Spain -> Spanish
+            'MX': 'es',    // Mexico -> Spanish
+            'AR': 'es',    // Argentina -> Spanish
+            'CO': 'es',    // Colombia -> Spanish
+            'PE': 'es',    // Peru -> Spanish
+            'VE': 'es',    // Venezuela -> Spanish
+            'CL': 'es',    // Chile -> Spanish
+            'EC': 'es',    // Ecuador -> Spanish
+            'GT': 'es',    // Guatemala -> Spanish
+            'CU': 'es',    // Cuba -> Spanish
+            'BO': 'es',    // Bolivia -> Spanish
+            'DO': 'es',    // Dominican Republic -> Spanish
+            'HN': 'es',    // Honduras -> Spanish
+            'PY': 'es',    // Paraguay -> Spanish
+            'SV': 'es',    // El Salvador -> Spanish
+            'NI': 'es',    // Nicaragua -> Spanish
+            'CR': 'es',    // Costa Rica -> Spanish
+            'PA': 'es',    // Panama -> Spanish
+            'UY': 'es',    // Uruguay -> Spanish
+            'GQ': 'es',    // Equatorial Guinea -> Spanish
         };
 
         const languageNames = {
@@ -158,7 +230,10 @@
             'en': 'English',
             'cn': '中文 (Chinese)',
             'jp': '日本語 (Japanese)',
-            'fr': 'Français (French)'
+            'fr': 'Français (French)',
+            'ru': 'Русский (Russian)',
+            'de': 'Deutsch (German)',
+            'es': 'Español (Spanish)'
         };
 
         let detectedCountry = null;
@@ -168,7 +243,7 @@
         // Check if user has a language preference stored
         function checkStoredPreference() {
             const stored = localStorage.getItem('sfi-language-preference');
-            if (stored && ['kr', 'en', 'cn', 'jp', 'fr'].includes(stored)) {
+            if (stored && ['kr', 'en', 'cn', 'jp', 'fr', 'ru', 'de', 'es'].includes(stored)) {
                 goToLanguage(stored);
                 return true;
             }
@@ -190,6 +265,12 @@
                     recommendedLanguage = 'jp';
                 } else if (langCode.startsWith('fr')) {
                     recommendedLanguage = 'fr';
+                } else if (langCode.startsWith('ru')) {
+                    recommendedLanguage = 'ru';
+                } else if (langCode.startsWith('de')) {
+                    recommendedLanguage = 'de';
+                } else if (langCode.startsWith('es')) {
+                    recommendedLanguage = 'es';
                 } else {
                     recommendedLanguage = 'en';
                 }
@@ -246,7 +327,10 @@
                 'en': 'index_en.html',
                 'cn': 'index_cn.html',
                 'jp': 'index_jp.html',
-                'fr': 'index_fr.html'
+                'fr': 'index_fr.html',
+                'ru': 'index_ru.html',
+                'de': 'index_de.html',
+                'es': 'index_es.html'
             };
             
             window.location.href = pages[lang] || pages['en'];
@@ -286,7 +370,7 @@
         // Handle URL parameters for direct language selection
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
-        if (langParam && ['kr', 'en', 'cn', 'jp', 'fr'].includes(langParam)) {
+        if (langParam && ['kr', 'en', 'cn', 'jp', 'fr', 'ru', 'de', 'es'].includes(langParam)) {
             goToLanguage(langParam);
         }
     </script>
