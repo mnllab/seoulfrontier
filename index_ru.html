@@ -76,6 +76,26 @@
             margin-right: 8px;
             border-radius: 2px;
         }
+        /* 모바일 메뉴 텍스트 오버플로우 방지 */
+        #mobile-menu a {
+            white-space: normal;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            hyphens: auto;
+        }
+        /* 전체 페이지의 긴 단어 처리 */
+        body {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+        /* 특히 긴 러시아어 단어가 있는 섹션들 */
+        h1, h2, h3, h4, h5, h6, p, a, span, div {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
         /* Адаптивные настройки для мобильных устройств */
         @media (max-width: 768px) {
             .hero-title {
@@ -87,6 +107,26 @@
             }
             .team-description {
                 font-size: 0.875rem;
+            }
+            /* 모바일에서 긴 단어가 있는 섹션의 폰트 크기 조정 */
+            #mobile-menu a {
+                font-size: 0.875rem; /* 14px */
+            }
+            h1 {
+                font-size: 1.75rem; /* 28px */
+            }
+            h2 {
+                font-size: 1.5rem; /* 24px */
+            }
+            h3 {
+                font-size: 1.125rem; /* 18px */
+            }
+            p, span, div {
+                font-size: 0.875rem; /* 14px */
+            }
+            /* 특히 긴 러시아어 단어가 있는 특정 요소들 */
+            .section-title {
+                font-size: 1.75rem !important;
             }
         }
     </style>
@@ -162,9 +202,9 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
             <a href="#about" class="block py-2 text-gray-600 hover-gold">О компании</a>
             <a href="#team" class="block py-2 text-gray-600 hover-gold">Наша команда</a>
-            <a href="#strategy" class="block py-2 text-gray-600 hover-gold">Инвестиционная стратегия</a>
+            <a href="#strategy" class="block py-2 text-gray-600 hover-gold break-words">Инвестиционная<br>стратегия</a>
             <a href="#portfolio" class="block py-2 text-gray-600 hover-gold">Портфолио</a>
-            <a href="#acceleration" class="block py-2 text-gray-600 hover-gold">Поддержка стартапов</a>
+            <a href="#acceleration" class="block py-2 text-gray-600 hover-gold break-words">Поддержка<br>стартапов</a>
             <!-- <a href="#news" class="block py-2 text-gray-600 hover-gold">Новости</a> -->
             <a href="#contact" class="block py-2 text-gray-600 hover-gold">Контакты</a>
             <!-- Мобильный селектор языка -->
