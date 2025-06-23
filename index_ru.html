@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFi - Seoul Frontier Investment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Установить основной шрифт Inter для русского языка */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Стиль заголовков разделов */
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        /* Цветовая тема темно-синий и золотой */
+        .bg-deep-blue { background-color: #0d1b3e; }
+        .text-gold { color: #d4af37; }
+        .border-gold { border-color: #d4af37; }
+        .hover-gold:hover { color: #e6c667; }
+        .bg-gold { background-color: #d4af37; }
+        /* Эффект тени заголовка */
+        .header-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        /* Фоновое изображение героической секции */
+        #hero {
+            background-image: linear-gradient(rgba(13, 27, 62, 0.8), rgba(13, 27, 62, 0.8)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Стили селектора языка */
+        .language-dropdown {
+            position: relative;
+        }
+        .language-dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: #374151;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        .dropdown-content a:hover {
+            background-color: #f3f4f6;
+            color: #d4af37;
+        }
+        .flag-icon {
+            width: 20px;
+            height: 14px;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+        /* Адаптивные настройки для мобильных устройств */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+            .company-overview-grid {
+                font-size: 0.875rem;
+            }
+            .team-description {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Заголовок и навигация -->
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 w-full header-shadow">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-deep-blue">
+                SFi
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-600 hover-gold transition-colors">О компании</a>
+                <a href="#team" class="text-gray-600 hover-gold transition-colors">Наша команда</a>
+                <a href="#strategy" class="text-gray-600 hover-gold transition-colors">Инвестиционная стратегия</a>
+                <a href="#portfolio" class="text-gray-600 hover-gold transition-colors">Портфолио</a>
+                <a href="#acceleration" class="text-gray-600 hover-gold transition-colors">Поддержка стартапов</a>
+                <a href="#news" class="text-gray-600 hover-gold transition-colors">Новости</a>
+                <a href="#contact" class="text-gray-600 hover-gold transition-colors">Контакты</a>
+                <!-- Селектор языка -->
+                <div class="language-dropdown">
+                    <button class="flex items-center text-gray-600 hover-gold transition-colors">
+                        <img src="https://flagcdn.com/w20/ru.png" alt="Русский" class="flag-icon">
+                        <span>Русский</span>
+                        <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="index_kr.html">
+                            <img src="https://flagcdn.com/w20/kr.png" alt="한국어" class="flag-icon inline">
+                            한국어
+                        </a>
+                        <a href="index_en.html">
+                            <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon inline">
+                            English
+                        </a>
+                        <a href="index_cn.html">
+                            <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon inline">
+                            中文
+                        </a>
+                        <a href="index_jp.html">
+                            <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon inline">
+                            日本語
+                        </a>
+                        <a href="index_fr.html">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon inline">
+                            Français
+                        </a>
+                        <a href="index_ru.html">
+                            <img src="https://flagcdn.com/w20/ru.png" alt="Русский" class="flag-icon inline">
+                            Русский
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Кнопка мобильного меню -->
+            <button id="mobile-menu-btn" class="md:hidden text-deep-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Мобильное меню -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover-gold">О компании</a>
+            <a href="#team" class="block py-2 text-gray-600 hover-gold">Наша команда</a>
+            <a href="#strategy" class="block py-2 text-gray-600 hover-gold">Инвестиционная стратегия</a>
+            <a href="#portfolio" class="block py-2 text-gray-600 hover-gold">Портфолио</a>
+            <a href="#acceleration" class="block py-2 text-gray-600 hover-gold">Поддержка стартапов</a>
+            <a href="#news" class="block py-2 text-gray-600 hover-gold">Новости</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover-gold">Контакты</a>
+            <!-- Мобильный селектор языка -->
+            <div class="mt-4 pt-4 border-t border-gray-200">
+                <p class="text-sm font-medium text-gray-500 mb-2">Язык</p>
+                <div class="space-y-2">
+                    <a href="index_kr.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/kr.png" alt="한국어" class="flag-icon">
+                        한국어
+                    </a>
+                    <a href="index_en.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon">
+                        English
+                    </a>
+                    <a href="index_cn.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon">
+                        中文
+                    </a>
+                    <a href="index_jp.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon">
+                        日本語
+                    </a>
+                    <a href="index_fr.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon">
+                        Français
+                    </a>
+                    <a href="index_ru.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/ru.png" alt="Русский" class="flag-icon">
+                        Русский
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Героическая секция -->
+        <section id="hero" class="text-white h-screen flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-3xl md:text-6xl font-bold mb-4 leading-tight hero-title">
+                    Акселератор, который устраняет слепые зоны <span class="text-gold">глубокотехнологичных стартапов</span><br>
+                    и развивает <span class="text-gold">глобальных единорогов</span>
+                </h1>
+                <p class="text-base md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Seoul Frontier Investment (SFi) — ведущий технологический стартап-хаб в Корее, основанный на сети выпускников Сеульского национального университета и технологической экспертизе.
+                </p>
+                <a href="#about" class="mt-8 inline-block bg-gold text-deep-blue font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-all">
+                    Узнать больше о SFi
+                </a>
+            </div>
+        </section>
+        <!-- О компании SFi -->
+        <section id="about" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">О КОМПАНИИ SFi</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFi соединяет технологии, предпринимательство и рост.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-base text-center text-gray-700 mb-12 leading-relaxed">
+                        Seoul Frontier Investment (SFi) была создана на основе успешного опыта «Инвестиционной ассоциации по поиску единорогов в области инженерных технологий СНУ» для поиска перспективных стартапов на раннем этапе в области глубоких технологий и построения устойчивой инвестиционной экосистемы, которая растет вместе. SFi станет хабом для технологических стартапов, который соединяет выдающиеся таланты и технологическую мощь Сеульского национального университета со стартапами, и мощно поддерживает инновационные технологические стартапы для роста в глобальные компании-единороги через проверенную экспертизу и сети.
+                    </p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-deep-blue mb-6 text-center">Обзор компании</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-sm md:text-lg company-overview-grid">
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>Название компании:</strong> Seoul Frontier Investment Co., Ltd.</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>Генеральный директор:</strong> Пак Сон Чхоль (основатель EnCar)</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>Основана:</strong> Февраль 2025</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>Ключевой персонал:</strong> 6 человек (4 руководителя и сотрудника, 2 консультанта)</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg col-span-1 md:col-span-2"><strong>Тип деятельности:</strong> Поддержка стартапов, инвестиционное консультирование, управленческое консультирование, управление инвестиционными ассоциациями и т.д.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Наша команда -->
+        <section id="team" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">НАША КОМАНДА</h2>
+                    <p class="mt-4 text-lg text-gray-600">Лучшие эксперты будут с вами от стартапа до роста.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <!-- Пак Сон Чхоль CEO -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.C+Park" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Пак Сон Чхоль Генеральный директор">
+                        <h3 class="text-xl font-bold text-deep-blue">Пак Сон Чхоль</h3>
+                        <p class="text-gold font-semibold mb-2">Генеральный директор</p>
+                        <p class="text-sm text-gray-600 team-description">Основатель (CEO) EnCar<br>В настоящее время приглашенный профессор Сеульского национального университета<br>Эксперт по управлению/росту/инвестиционной стратегии</p>
+                    </div>
+                    <!-- Ли Ги Чжон Директор -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=G.J+Lee" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Ли Ги Чжон Директор">
+                        <h3 class="text-xl font-bold text-deep-blue">Ли Ги Чжон</h3>
+                        <p class="text-gold font-semibold mb-2">Директор</p>
+                        <p class="text-sm text-gray-600 team-description">Эксперт по M&A<br>Бывший CEO Fitech Investment<br>Экспертиза в области финансов/инвестиций</p>
+                    </div>
+                    <!-- Ю Сын Ман Директор -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.M+Yoo" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Ю Сын Ман Директор">
+                        <h3 class="text-xl font-bold text-deep-blue">Ю Сын Ман</h3>
+                        <p class="text-gold font-semibold mb-2">Директор</p>
+                        <p class="text-sm text-gray-600 team-description">Эксперт по глобальному бизнесу<br>CEO TL Worldwide, Inc.<br>Экспертиза в области бизнес-ангельских инвестиций и управления</p>
+                    </div>
+                    <!-- Чо У Чжу Аудитор -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=W.J+Cho" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Чо У Чжу Аудитор">
+                        <h3 class="text-xl font-bold text-deep-blue">Чо У Чжу</h3>
+                        <p class="text-gold font-semibold mb-2">Аудитор</p>
+                        <p class="text-sm text-gray-600 team-description">Основатель SPACOSA, опыт M&A<br>Эксперт по привлечению инвестиций и развитию бизнеса</p>
+                    </div>
+                </div>
+                <div class="mt-20 text-center max-w-5xl mx-auto p-10 bg-gray-50 rounded-lg border">
+                    <h3 class="text-3xl font-bold text-deep-blue mb-2">Консультативная группа</h3>
+                     <p class="text-gray-600 mb-8">SFi предоставляет практические решения всех проблем, с которыми сталкиваются стартапы,<br class="hidden md:block">через сеть ведущих отраслевых экспертов, центром которой являются выпускники Сеульского национального университета.</p>
+
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
+                        <div class="text-center">
+                            <h4 class="text-lg font-semibold text-gold">Председатель</h4>
+                            <p class="text-xl font-bold text-deep-blue">Ли Чжон Су</p>
+                            <p class="text-sm text-gray-500">В настоящее время профессор по промышленно-академическому сотрудничеству<br>Сеульского национального университета<br>Эксперт по технологическим стартапам</p>
+                        </div>
+                         <div class="w-px h-16 bg-gray-300 hidden md:block"></div>
+                        <div class="text-center">
+                            <h4 class="text-lg font-semibold text-gold">Заместитель председателя</h4>
+                            <p class="text-xl font-bold text-deep-blue">Ким Чан Гиль</p>
+                            <p class="text-sm text-gray-500">В настоящее время профессор-исследователь<br>Сеульского национального университета<br>Эксперт по технологическим стартапам</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full border-t border-gray-200 my-8"></div>
+
+                    <h4 class="text-xl font-semibold text-deep-blue mb-6">Экспертная консультативная группа по областям (всего 20+ человек)</h4>
+                    <div class="flex flex-wrap justify-center gap-4 text-gray-700">
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Управленческое консультирование (3 человека)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Технологические стартапы (2 человека)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Венчурные инвестиции (2 человека)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Химические материалы (2 человека)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Патенты/БД (1 человек)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Программное обеспечение (1 человек)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Финтех (1 человек)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">ИИ/ИКТ (1 человек)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">M&A (1 человек)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Право/патенты (1 человек)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">И многие другие</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Инвестиционная стратегия -->
+        <section id="strategy" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ИНВЕСТИЦИОННАЯ СТРАТЕГИЯ</h2>
+                    <p class="mt-4 text-lg text-gray-600">Основные ценности SFi — инновации, превосходство, глобальность и создание ценности.</p>
+                </div>
+                <!-- Четыре основные ценности -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">ИННОВАЦИИ</h3>
+                        <p class="text-gray-600">Способность обнаруживать и проверять перспективные технологии, развивать новые рынки и инновационно решать проблемы</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">ПРЕВОСХОДСТВО</h3>
+                        <p class="text-gray-600">Профессиональная экспертиза инвестиций, систематическая поддержка роста и дифференцированная акселерация</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9M3 12a9 9 0 009 9" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">ГЛОБАЛЬНОСТЬ</h3>
+                        <p class="text-gray-600">Поддержка стратегий выхода на глобальные рынки, создание международных сетей и привлечение зарубежных инвестиций</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">СОЗДАНИЕ ЦЕННОСТИ</h3>
+                        <p class="text-gray-600">Создание устойчивой ценности, лидерство в промышленных инновациях и обнаружение будущих двигателей роста</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Портфолио -->
+        <section id="portfolio" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ПОРТФОЛИО</h2>
+                    <p class="mt-4 text-lg text-gray-600">Вот инновационные компании, растущие вместе с SFi.</p>
+                    <p class="mt-2 text-sm text-gray-500">(Информация об инвестированных компаниях будет обновлена в ближайшее время.)</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Пример портфолио 1 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="Решение компьютерного зрения с ИИ">
+                        <h3 class="text-xl font-bold text-deep-blue">Решение компьютерного зрения с ИИ</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#ИИ #Большие данные</p>
+                        <p class="text-gray-600">Разработка промышленных решений компьютерного зрения с ИИ. Быстрый рост путем проведения PoC с крупными корпорациями через программы начальных инвестиций и повышения стоимости SFi.</p>
+                    </div>
+                    <!-- Пример портфолио 2 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="Энергия нового поколения">
+                        <h3 class="text-xl font-bold text-deep-blue">Энергия нового поколения</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#климатические технологии #энергия</p>
+                        <p class="text-gray-600">Разработка технологий переработки отработанных батарей нового поколения. Строительство партнерских отношений с глобальными партнерами через сеть SFi и подготовка к инвестициям серии A.</p>
+                    </div>
+                    <!-- Пример портфолио 3 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="Цифровое здравоохранение">
+                        <h3 class="text-xl font-bold text-deep-blue">Цифровое здравоохранение</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#Биотехнологии #Здравоохранение</p>
+                        <p class="text-gray-600">Разработка платформы диагностики редких заболеваний. Ускорение коммерциализации технологий благодаря наставничеству консультативного совета SFi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Программа поддержки стартапов -->
+        <section id="acceleration" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ПОДДЕРЖКА СТАРТАПОВ</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFi будет сопровождать вас через все процессы роста за пределами простых инвестиций.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">Совершенствование бизнес-модели</h3>
+                        <p>Укрепление основы вашего бизнеса, включая анализ рынка, поворот БМ и валидацию модели доходов.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">Практическое наставничество</h3>
+                        <p>Развитие практических навыков через коучинг по IR-презентациям, написанию и представлению планов проектов, поддерживаемых правительством.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">Создание сетей</h3>
+                        <p>Предоставление возможностей для роста, включая привлечение последующих инвестиций и подключение к технологическим/деловым партнерствам.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">Поддержка управленческой инфраструктуры</h3>
+                        <p>Предоставление консультаций по основной управленческой инфраструктуре для стартапов, включая юридические, патентные, финансовые и бухгалтерские вопросы.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Новости -->
+        <section id="news" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">НОВОСТИ</h2>
+                    <p class="mt-4 text-lg text-gray-600">Принося вам последние новости от SFi.</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-8">
+                     <div class="p-6 border-b border-gray-200">
+                        <p class="text-sm text-gray-500 mb-1">20.05.2025 | Пресс-релиз</p>
+                        <a href="#" class="text-xl font-bold text-deep-blue hover-gold">SFi переехала в Центр инкубации стартапов Сеульского национального университета... "Готовы к полномасштабному развитию глубокотехнологичных стартапов"</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Контакты -->
+        <section id="contact" class="py-20 md:py-32 bg-deep-blue text-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-white">СВЯЖИТЕСЬ С НАМИ</h2>
+                    <p class="mt-4 text-lg text-gray-300">SFi ищет инновационных предпринимателей и партнеров, которые откроют новые горизонты.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <!-- Запросы через канал KakaoTalk -->
+                    <div class="text-center">
+                         <h3 class="text-2xl font-bold text-gold mb-4">Запросы через канал KakaoTalk</h3>
+                         <p class="text-center text-gray-300 mb-8">
+                             Если вы хотите более простой и быстрой консультации,<br>пожалуйста, свяжитесь с нами через канал SFi KakaoTalk.
+                         </p>
+                              <a href="http://pf.kakao.com/_xgeTrn/chat" class="inline-flex items-center justify-center bg-yellow-400 text-gray-900 font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 transition-all text-lg">
+                             <svg class="w-7 h-7 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12c0 3.303 1.632 6.223 4.141 8.125-.03.064-.061.127-.091.191L4.25 23.333a.5.5 0 00.651.651l3.017-1.799c.097.042.195.082.294.12A9.991 9.991 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm-1.25 9.125a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5zm4.375 0a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5z"/></svg>
+                             <span>Перейти на канал SFi KakaoTalk</span>
+                         </a>
+                    </div>
+
+                    <!-- Разделитель -->
+                    <div class="flex items-center my-12">
+                        <div class="flex-grow border-t border-gray-600"></div>
+                        <span class="flex-shrink mx-4 text-gray-400">ИЛИ</span>
+                        <div class="flex-grow border-t border-gray-600"></div>
+                    </div>
+
+                    <!-- Форма контакта -->
+                    <div class="bg-gray-50/10 p-8 sm:p-12 rounded-lg">
+                        <h3 class="text-2xl font-bold text-center text-white mb-8">Запросы по инвестициям/партнерству/другим вопросам</h3>
+                        <form id="contact-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block mb-2 font-medium">Имя / Название компании</label>
+                                    <input type="text" id="name" name="name" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                <div>
+                                    <label for="email" class="block mb-2 font-medium">Электронная почта</label>
+                                    <input type="email" id="email" name="email" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                 <div>
+                                    <label for="phone" class="block mb-2 font-medium">Контакт</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                <div>
+                                    <label for="inquiryType" class="block mb-2 font-medium">Тип запроса</label>
+                                    <select id="inquiryType" name="inquiryType" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                        <option>Инвестиционное предложение</option>
+                                        <option>Предложение партнерства</option>
+                                        <option>Общий запрос</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block mb-2 font-medium">Детали запроса</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="w-full sm:w-auto bg-gold text-deep-blue font-bold py-3 px-10 rounded-full hover:bg-yellow-500 transition-all text-lg">
+                                    Отправить запрос
+                                </button>
+                            </div>
+                        </form>
+                        <div id="form-status" class="text-center mt-6"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p class="font-bold text-lg text-white mb-2">Seoul Frontier Investment Co., Ltd.</p>
+            <p>Генеральный директор: Пак Сон Чхоль | Номер регистрации бизнеса: 318-88-03207</p>
+            <p>Штаб-квартира: № 637, Сонъам-дэро 1133, Чунвон-гу, Сонъам-си, Кёнги-до, Корея</p>
+            <p>Центр поддержки роста стартапов: №1305, Конхан-дэро 186, Кансо-гу, Сеул, Корея</p>
+            <p>E. <a href="mailto:seoulfrontier@gmail.com" class="hover-gold">seoulfrontier@gmail.com</a> | T. <a href="tel:0502-1919-0921" class="hover-gold">0502-1919-0921</a></p>
+            <p class="mt-4">&copy; 2025 Seoul Frontier Investment. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Скрипт переключения мобильного меню
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Закрытие мобильного меню при клике на ссылку
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Скрипт отправки контактной формы
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = contactForm?.querySelector('button[type="submit"]');
+
+    contactForm?.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzImfJX6P6htca78NPrUPcfZ4fHFjTGlfVtwWQ2_SvtljCCle8b5OXE8gnzRwgWwHFW/exec';
+      const formData = new FormData(contactForm);
+
+      formStatus.textContent = 'Отправка...';
+      formStatus.className = 'text-yellow-400';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Отправка...';
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(res => res.json())
+        .then(data => {
+          if (data.result === 'success') {
+            formStatus.textContent = 'Ваш запрос был успешно отправлен. Мы свяжемся с вами в ближайшее время.';
+            formStatus.className = 'text-green-400';
+            contactForm.reset();
+          } else {
+            throw new Error(data.error || 'Unknown error');
+          }
+        })
+        .catch(err => {
+          console.error('Error!', err.message);
+          formStatus.textContent = 'Произошла ошибка. Пожалуйста, попробуйте позже.';
+          formStatus.className = 'text-red-400';
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Отправить запрос';
+          formStatus.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+  </script>
+</body>
+</html>
