@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFi - 首尔前沿投资</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 设置基本字体为Noto Sans SC */
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        /* 章节标题样式 */
+        .section-title {
+            font-family: 'Noto Sans SC', sans-serif;
+            font-weight: 600;
+        }
+        /* 深蓝色和金色主题 */
+        .bg-deep-blue { background-color: #0d1b3e; }
+        .text-gold { color: #d4af37; }
+        .border-gold { border-color: #d4af37; }
+        .hover-gold:hover { color: #e6c667; }
+        .bg-gold { background-color: #d4af37; }
+        /* 头部阴影效果 */
+        .header-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        /* 英雄区背景图像 */
+        #hero {
+            background-image: linear-gradient(rgba(13, 27, 62, 0.8), rgba(13, 27, 62, 0.8)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        /* 语言选择器样式 */
+        .language-dropdown {
+            position: relative;
+        }
+        .language-dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: #374151;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        .dropdown-content a:hover {
+            background-color: #f3f4f6;
+            color: #d4af37;
+        }
+        .flag-icon {
+            width: 20px;
+            height: 14px;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+        /* 移动端响应式调整 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+            .company-overview-grid {
+                font-size: 0.875rem;
+            }
+            .team-description {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- 头部和导航 -->
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 w-full header-shadow">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-deep-blue">
+                SFi
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-600 hover-gold transition-colors">关于SFi</a>
+                <a href="#team" class="text-gray-600 hover-gold transition-colors">我们的团队</a>
+                <a href="#strategy" class="text-gray-600 hover-gold transition-colors">投资策略</a>
+                <a href="#portfolio" class="text-gray-600 hover-gold transition-colors">投资组合</a>
+                <a href="#acceleration" class="text-gray-600 hover-gold transition-colors">创业支持</a>
+                <a href="#news" class="text-gray-600 hover-gold transition-colors">新闻中心</a>
+                <a href="#contact" class="text-gray-600 hover-gold transition-colors">联系我们</a>
+                <!-- 语言选择器 -->
+                <div class="language-dropdown">
+                    <button class="flex items-center text-gray-600 hover-gold transition-colors">
+                        <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon">
+                        <span>中文</span>
+                        <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="index_kr.html">
+                            <img src="https://flagcdn.com/w20/kr.png" alt="한국어" class="flag-icon inline">
+                            한국어
+                        </a>
+                        <a href="index_en.html">
+                            <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon inline">
+                            English
+                        </a>
+                        <a href="index_cn.html">
+                            <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon inline">
+                            中文
+                        </a>
+                        <a href="index_jp.html">
+                            <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon inline">
+                            日本語
+                        </a>
+                        <a href="index_fr.html">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon inline">
+                            Français
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <!-- 移动端菜单按钮 -->
+            <button id="mobile-menu-btn" class="md:hidden text-deep-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover-gold">关于SFi</a>
+            <a href="#team" class="block py-2 text-gray-600 hover-gold">我们的团队</a>
+            <a href="#strategy" class="block py-2 text-gray-600 hover-gold">投资策略</a>
+            <a href="#portfolio" class="block py-2 text-gray-600 hover-gold">投资组合</a>
+            <a href="#acceleration" class="block py-2 text-gray-600 hover-gold">创业支持</a>
+            <a href="#news" class="block py-2 text-gray-600 hover-gold">新闻中心</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover-gold">联系我们</a>
+            <!-- 移动端语言选择器 -->
+            <div class="mt-4 pt-4 border-t border-gray-200">
+                <p class="text-sm font-medium text-gray-500 mb-2">语言</p>
+                <div class="space-y-2">
+                    <a href="index_kr.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/kr.png" alt="한국어" class="flag-icon">
+                        한국어
+                    </a>
+                    <a href="index_en.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon">
+                        English
+                    </a>
+                    <a href="index_cn.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon">
+                        中文
+                    </a>
+                    <a href="index_jp.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon">
+                        日本語
+                    </a>
+                    <a href="index_fr.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon">
+                        Français
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- 英雄区 -->
+        <section id="hero" class="text-white h-screen flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-3xl md:text-6xl font-bold mb-4 leading-tight hero-title">
+                    消除<span class="text-gold">深科技创业</span>盲区<br>
+                    培育<span class="text-gold">全球独角兽</span>的加速器
+                </h1>
+                <p class="text-base md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    首尔前沿投资（SFi）基于首尔大学校友网络和技术专业性，致力于成为韩国领先的技术创业中心。
+                </p>
+                <a href="#about" class="mt-8 inline-block bg-gold text-deep-blue font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-all">
+                    了解更多关于SFi
+                </a>
+            </div>
+        </section>
+        <!-- 关于SFi -->
+        <section id="about" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">关于SFi</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFi连接技术、创业和成长。</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-base text-center text-gray-700 mb-12 leading-relaxed">
+                        首尔前沿投资（SFi）基于"首尔大学工程技术独角兽发掘投资组合"的成功经验而设立，旨在发掘深科技领域有前景的初期创业企业，共同构建可持续发展的投资生态系统。我们将成为技术创业的中心，连接首尔大学的优秀人才和技术实力与创业企业，通过经过验证的专业性和网络，强力支持创新技术初创企业成长为全球独角兽企业。
+                    </p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-deep-blue mb-6 text-center">企业概况</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-sm md:text-lg company-overview-grid">
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>公司名称：</strong> 首尔前沿投资有限公司</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>首席执行官：</strong> 朴成哲（前Encar创始人）</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>成立时间：</strong> 2025年2月</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>核心人员：</strong> 6人（高管及员工4人，顾问2人）</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg col-span-1 md:col-span-2"><strong>业务类型：</strong> 创业支持、投资咨询、管理咨询、投资组合运营等</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 我们的团队 -->
+        <section id="team" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">我们的团队</h2>
+                    <p class="mt-4 text-lg text-gray-600">从创业到成长，最优秀的专家与您同行。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <!-- 朴成哲 CEO -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.C+Park" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="朴成哲 首席执行官">
+                        <h3 class="text-xl font-bold text-deep-blue">朴成哲</h3>
+                        <p class="text-gold font-semibold mb-2">首席执行官</p>
+                        <p class="text-sm text-gray-600 team-description">前Encar创始人（CEO）<br>现首尔大学客座教授<br>管理/成长/投资策略专家</p>
+                    </div>
+                    <!-- 李起钟 董事 -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=G.J+Lee" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="李起钟 董事">
+                        <h3 class="text-xl font-bold text-deep-blue">李起钟</h3>
+                        <p class="text-gold font-semibold mb-2">董事</p>
+                        <p class="text-sm text-gray-600 team-description">并购专家<br>前Fitech Investment代表<br>财务/投资领域专业</p>
+                    </div>
+                    <!-- 柳承万 董事 -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.M+Yoo" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="柳承万 董事">
+                        <h3 class="text-xl font-bold text-deep-blue">柳承万</h3>
+                        <p class="text-gold font-semibold mb-2">董事</p>
+                        <p class="text-sm text-gray-600 team-description">全球业务专家<br>TL Worldwide有限公司代表<br>天使投资及经营经验</p>
+                    </div>
+                    <!-- 赵宇周 监事 -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=W.J+Cho" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="赵宇周 监事">
+                        <h3 class="text-xl font-bold text-deep-blue">赵宇周</h3>
+                        <p class="text-gold font-semibold mb-2">监事</p>
+                        <p class="text-sm text-gray-600 team-description">SPACOSA创始人，并购经验<br>投资吸引及业务开发专家</p>
+                    </div>
+                </div>
+                <div class="mt-20 text-center max-w-5xl mx-auto p-10 bg-gray-50 rounded-lg border">
+                    <h3 class="text-3xl font-bold text-deep-blue mb-2">创业成长顾问团</h3>
+                     <p class="text-gray-600 mb-8">SFi通过以首尔大学校友为中心的行业顶级专家网络<br class="hidden md:block">为初创企业面临的所有问题提供实用解决方案。</p>
+
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
+                        <div class="text-center">
+                            <h4 class="text-lg font-semibold text-gold">团长</h4>
+                            <p class="text-xl font-bold text-deep-blue">李钟守</p>
+                            <p class="text-sm text-gray-500">现首尔大学产学合作教授<br>技术创业专家</p>
+                        </div>
+                         <div class="w-px h-16 bg-gray-300 hidden md:block"></div>
+                        <div class="text-center">
+                            <h4 class="text-lg font-semibold text-gold">副团长</h4>
+                            <p class="text-xl font-bold text-deep-blue">金章吉</p>
+                            <p class="text-sm text-gray-500">现首尔大学研究教授<br>技术创业专家</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full border-t border-gray-200 my-8"></div>
+
+                    <h4 class="text-xl font-semibold text-deep-blue mb-6">分领域专业顾问团（共20人以上）</h4>
+                    <div class="flex flex-wrap justify-center gap-4 text-gray-700">
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">管理咨询（3人）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">技术创业（2人）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">风险投资（2人）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">化工材料（2人）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">专利/数据库（1人）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">软件（1人）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">金融科技（1人）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">人工智能/信息通信（1人）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">并购（1人）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">法律/专利（1人）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">其他众多</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 投资策略 -->
+        <section id="strategy" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">投资策略</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFi的核心价值是创新、卓越、全球化和价值创造。</p>
+                </div>
+                <!-- 四大核心价值 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">创新</h3>
+                        <p class="text-gray-600">发掘和验证有前景的技术，开拓新市场，创新性地解决问题的能力</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">卓越</h3>
+                        <p class="text-gray-600">专业投资审查、系统性成长支持、差异化加速</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9M3 12a9 9 0 009 9" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">全球化</h3>
+                        <p class="text-gray-600">支持全球市场进入策略、国际网络构建、海外投资吸引</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">价值创造</h3>
+                        <p class="text-gray-600">创造可持续价值、引领产业创新、发掘未来增长动力</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 投资组合 -->
+        <section id="portfolio" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">投资组合</h2>
+                    <p class="mt-4 text-lg text-gray-600">这里展示与SFi共同成长的创新企业。</p>
+                    <p class="mt-2 text-sm text-gray-500">（投资企业信息即将更新。）</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 投资组合示例1 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="AI视觉解决方案">
+                        <h3 class="text-xl font-bold text-deep-blue">AI视觉解决方案</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#人工智能 #大数据</p>
+                        <p class="text-gray-600">开发工业AI视觉解决方案。通过SFi的种子投资和价值提升项目，与主要大企业进行PoC，快速成长中。</p>
+                    </div>
+                    <!-- 投资组合示例2 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="下一代能源">
+                        <h3 class="text-xl font-bold text-deep-blue">下一代能源</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#气候技术 #能源</p>
+                        <p class="text-gray-600">开发下一代废电池回收技术。通过SFi的网络与全球合作伙伴建立合作关系，正在准备A轮投资。</p>
+                    </div>
+                    <!-- 投资组合示例3 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="数字医疗">
+                        <h3 class="text-xl font-bold text-deep-blue">数字医疗</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#生物 #医疗</p>
+                        <p class="text-gray-600">开发罕见疾病诊断平台。通过SFi顾问团的指导，正在加速技术商业化。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 创业支持项目 -->
+        <section id="acceleration" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">创业支持</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFi将超越简单投资，陪伴您走过成长的每一个过程。</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">商业模式升级</h3>
+                        <p>强化业务核心，包括市场分析、商业模式转型、收益模式验证等。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">实战型指导</h3>
+                        <p>通过IR路演、政府支持项目计划书撰写及演示指导来提升实战能力。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">网络连接</h3>
+                        <p>提供成长机会，包括吸引后续投资、连接技术/商业合作伙伴关系。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">管理基础设施支持</h3>
+                        <p>为初创企业提供必要的管理基础设施咨询，包括法律、专利、财务、会计等方面。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 新闻中心 -->
+        <section id="news" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">新闻中心</h2>
+                    <p class="mt-4 text-lg text-gray-600">为您带来SFi的最新消息。</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-8">
+                     <div class="p-6 border-b border-gray-200">
+                        <p class="text-sm text-gray-500 mb-1">2025.05.20 | 新闻稿</p>
+                        <a href="#" class="text-xl font-bold text-deep-blue hover-gold">SFi入驻首尔大学创业孵化中心..."深科技创业培育全面展开"</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 联系我们 -->
+        <section id="contact" class="py-20 md:py-32 bg-deep-blue text-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-white">联系我们</h2>
+                    <p class="mt-4 text-lg text-gray-300">SFi期待与开拓新天地的创新企业家和合作伙伴携手合作。</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <!-- KakaoTalk频道咨询 -->
+                    <div class="text-center">
+                         <h3 class="text-2xl font-bold text-gold mb-4">KakaoTalk频道咨询</h3>
+                         <p class="text-center text-gray-300 mb-8">
+                             如果您希望获得更简便快捷的咨询，<br>请通过SFi KakaoTalk频道联系我们。
+                         </p>
+                              <a href="http://pf.kakao.com/_xgeTrn/chat" class="inline-flex items-center justify-center bg-yellow-400 text-gray-900 font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 transition-all text-lg">
+                             <svg class="w-7 h-7 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12c0 3.303 1.632 6.223 4.141 8.125-.03.064-.061.127-.091.191L4.25 23.333a.5.5 0 00.651.651l3.017-1.799c.097.042.195.082.294.12A9.991 9.991 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm-1.25 9.125a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5zm4.375 0a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5z"/></svg>
+                             <span>进入SFi KakaoTalk频道</span>
+                         </a>
+                    </div>
+
+                    <!-- 分隔线 -->
+                    <div class="flex items-center my-12">
+                        <div class="flex-grow border-t border-gray-600"></div>
+                        <span class="flex-shrink mx-4 text-gray-400">或</span>
+                        <div class="flex-grow border-t border-gray-600"></div>
+                    </div>
+
+                    <!-- 联系表单 -->
+                    <div class="bg-gray-50/10 p-8 sm:p-12 rounded-lg">
+                        <h3 class="text-2xl font-bold text-center text-white mb-8">投资·合作伙伴关系·其他咨询</h3>
+                        <form id="contact-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block mb-2 font-medium">姓名/企业名称</label>
+                                    <input type="text" id="name" name="name" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                <div>
+                                    <label for="email" class="block mb-2 font-medium">电子邮箱</label>
+                                    <input type="email" id="email" name="email" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                 <div>
+                                    <label for="phone" class="block mb-2 font-medium">联系方式</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                <div>
+                                    <label for="inquiryType" class="block mb-2 font-medium">咨询类型</label>
+                                    <select id="inquiryType" name="inquiryType" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                        <option>投资提案</option>
+                                        <option>合作伙伴关系提案</option>
+                                        <option>一般咨询</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block mb-2 font-medium">咨询内容</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="w-full sm:w-auto bg-gold text-deep-blue font-bold py-3 px-10 rounded-full hover:bg-yellow-500 transition-all text-lg">
+                                    提交咨询
+                                </button>
+                            </div>
+                        </form>
+                        <div id="form-status" class="text-center mt-6"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p class="font-bold text-lg text-white mb-2">首尔前沿投资有限公司</p>
+            <p>首席执行官：朴成哲 | 企业注册号：318-88-03207</p>
+            <p>总部：韩国京畿道城南市中院区城南大路1133号637室</p>
+            <p>创业成长支援合作中心：韩国首尔特别市江西区机场大路186号1305室</p>
+            <p>邮箱：<a href="mailto:seoulfrontier@gmail.com" class="hover-gold">seoulfrontier@gmail.com</a> | 电话：<a href="tel:0502-1919-0921" class="hover-gold">0502-1919-0921</a></p>
+            <p class="mt-4">&copy; 2025 Seoul Frontier Investment. 版权所有。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换脚本
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 点击移动端菜单链接时关闭菜单
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 联系表单提交脚本
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = contactForm?.querySelector('button[type="submit"]');
+
+    contactForm?.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzImfJX6P6htca78NPrUPcfZ4fHFjTGlfVtwWQ2_SvtljCCle8b5OXE8gnzRwgWwHFW/exec';
+      const formData = new FormData(contactForm);
+
+      formStatus.textContent = '发送中...';
+      formStatus.className = 'text-yellow-400';
+      submitBtn.disabled = true;
+      submitBtn.textContent = '发送中...';
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(res => res.json())
+        .then(data => {
+          if (data.result === 'success') {
+            formStatus.textContent = '您的咨询已成功提交。我们会尽快与您联系。';
+            formStatus.className = 'text-green-400';
+            contactForm.reset();
+          } else {
+            throw new Error(data.error || 'Unknown error');
+          }
+        })
+        .catch(err => {
+          console.error('Error!', err.message);
+          formStatus.textContent = '发生错误。请稍后重试。';
+          formStatus.className = 'text-red-400';
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '提交咨询';
+          formStatus.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+  </script>
+</body>
+</html>
