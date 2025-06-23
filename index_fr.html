@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFi - Seoul Frontier Investment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Définir la police de base sur Inter pour le français */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style des titres de section */
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        /* Thème de couleurs bleu profond et or */
+        .bg-deep-blue { background-color: #0d1b3e; }
+        .text-gold { color: #d4af37; }
+        .border-gold { border-color: #d4af37; }
+        .hover-gold:hover { color: #e6c667; }
+        .bg-gold { background-color: #d4af37; }
+        /* Effet d'ombre de l'en-tête */
+        .header-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        /* Image de fond de la section héros */
+        #hero {
+            background-image: linear-gradient(rgba(13, 27, 62, 0.8), rgba(13, 27, 62, 0.8)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Styles du sélecteur de langue */
+        .language-dropdown {
+            position: relative;
+        }
+        .language-dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: #374151;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        .dropdown-content a:hover {
+            background-color: #f3f4f6;
+            color: #d4af37;
+        }
+        .flag-icon {
+            width: 20px;
+            height: 14px;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+        /* Ajustements responsifs mobiles */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+            .company-overview-grid {
+                font-size: 0.875rem;
+            }
+            .team-description {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- En-tête et navigation -->
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 w-full header-shadow">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-deep-blue">
+                SFi
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-600 hover-gold transition-colors">À propos de SFi</a>
+                <a href="#team" class="text-gray-600 hover-gold transition-colors">Notre équipe</a>
+                <a href="#strategy" class="text-gray-600 hover-gold transition-colors">Stratégie d'investissement</a>
+                <a href="#portfolio" class="text-gray-600 hover-gold transition-colors">Portfolio</a>
+                <a href="#acceleration" class="text-gray-600 hover-gold transition-colors">Accompagnement</a>
+                <a href="#news" class="text-gray-600 hover-gold transition-colors">Actualités</a>
+                <a href="#contact" class="text-gray-600 hover-gold transition-colors">Contact</a>
+                <!-- Sélecteur de langue -->
+                <div class="language-dropdown">
+                    <button class="flex items-center text-gray-600 hover-gold transition-colors">
+                        <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon">
+                        <span>Français</span>
+                        <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="index_kr.html">
+                            <img src="https://flagcdn.com/w20/kr.png" alt="한국어" class="flag-icon inline">
+                            한국어
+                        </a>
+                        <a href="index_en.html">
+                            <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon inline">
+                            English
+                        </a>
+                        <a href="index_cn.html">
+                            <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon inline">
+                            中文
+                        </a>
+                        <a href="index_jp.html">
+                            <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon inline">
+                            日本語
+                        </a>
+                        <a href="index_fr.html">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon inline">
+                            Français
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Bouton menu mobile -->
+            <button id="mobile-menu-btn" class="md:hidden text-deep-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover-gold">À propos de SFi</a>
+            <a href="#team" class="block py-2 text-gray-600 hover-gold">Notre équipe</a>
+            <a href="#strategy" class="block py-2 text-gray-600 hover-gold">Stratégie d'investissement</a>
+            <a href="#portfolio" class="block py-2 text-gray-600 hover-gold">Portfolio</a>
+            <a href="#acceleration" class="block py-2 text-gray-600 hover-gold">Accompagnement</a>
+            <a href="#news" class="block py-2 text-gray-600 hover-gold">Actualités</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover-gold">Contact</a>
+            <!-- Sélecteur de langue mobile -->
+            <div class="mt-4 pt-4 border-t border-gray-200">
+                <p class="text-sm font-medium text-gray-500 mb-2">Langue</p>
+                <div class="space-y-2">
+                    <a href="index_kr.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/kr.png" alt="한국어" class="flag-icon">
+                        한국어
+                    </a>
+                    <a href="index_en.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon">
+                        English
+                    </a>
+                    <a href="index_cn.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon">
+                        中文
+                    </a>
+                    <a href="index_jp.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon">
+                        日本語
+                    </a>
+                    <a href="index_fr.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon">
+                        Français
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Section héros -->
+        <section id="hero" class="text-white h-screen flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-3xl md:text-6xl font-bold mb-4 leading-tight hero-title">
+                    Un accélérateur qui élimine les angles morts des <span class="text-gold">startups deep tech</span><br>
+                    et favorise l'émergence de <span class="text-gold">licornes mondiales</span>
+                </h1>
+                <p class="text-base md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Seoul Frontier Investment (SFi) est un hub de startups technologiques de premier plan en Corée, basé sur le réseau d'anciens élèves de l'Université nationale de Séoul et l'expertise technologique.
+                </p>
+                <a href="#about" class="mt-8 inline-block bg-gold text-deep-blue font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-all">
+                    En savoir plus sur SFi
+                </a>
+            </div>
+        </section>
+        <!-- À propos de SFi -->
+        <section id="about" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">À PROPOS DE SFi</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFi connecte la technologie, l'entrepreneuriat et la croissance.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-base text-center text-gray-700 mb-12 leading-relaxed">
+                        Seoul Frontier Investment (SFi) a été créé sur la base de l'expérience réussie de l'« Association d'investissement pour la découverte de licornes en ingénierie et technologie SNU » pour découvrir des startups prometteuses en phase initiale dans le domaine de la deep tech et construire un écosystème d'investissement durable qui grandit ensemble. SFi deviendra un hub pour les startups technologiques qui connecte les talents exceptionnels et la puissance technologique de l'Université nationale de Séoul avec les startups, et soutient fortement les startups technologiques innovantes pour qu'elles deviennent des entreprises licornes mondiales grâce à une expertise et des réseaux éprouvés.
+                    </p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-deep-blue mb-6 text-center">Aperçu de l'entreprise</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-sm md:text-lg company-overview-grid">
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>Nom de l'entreprise :</strong> Seoul Frontier Investment Co., Ltd.</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>PDG :</strong> Park Seong-Cheol (fondateur d'EnCar)</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>Créée en :</strong> Février 2025</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>Personnel clé :</strong> 6 personnes (4 dirigeants et employés, 2 conseillers)</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg col-span-1 md:col-span-2"><strong>Type d'activité :</strong> Accompagnement de startups, conseil en investissement, conseil en gestion, gestion d'associations d'investissement, etc.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Notre équipe -->
+        <section id="team" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">NOTRE ÉQUIPE</h2>
+                    <p class="mt-4 text-lg text-gray-600">Les meilleurs experts vous accompagneront de la création à la croissance.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <!-- Park Seong-Cheol PDG -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.C+Park" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Park Seong-Cheol PDG">
+                        <h3 class="text-xl font-bold text-deep-blue">Park Seong-Cheol</h3>
+                        <p class="text-gold font-semibold mb-2">PDG</p>
+                        <p class="text-sm text-gray-600 team-description">Fondateur (PDG) d'EnCar<br>Actuellement professeur invité à l'Université nationale de Séoul<br>Expert en gestion/croissance/stratégie d'investissement</p>
+                    </div>
+                    <!-- Lee Ki-Jong Directeur -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=G.J+Lee" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Lee Ki-Jong Directeur">
+                        <h3 class="text-xl font-bold text-deep-blue">Lee Ki-Jong</h3>
+                        <p class="text-gold font-semibold mb-2">Directeur</p>
+                        <p class="text-sm text-gray-600 team-description">Expert en M&A<br>Ancien PDG de Fitech Investment<br>Expertise en finance/investissement</p>
+                    </div>
+                    <!-- Yoo Syeng-Mann Directeur -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.M+Yoo" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Yoo Syeng-Mann Directeur">
+                        <h3 class="text-xl font-bold text-deep-blue">Yoo Syeng-Mann</h3>
+                        <p class="text-gold font-semibold mb-2">Directeur</p>
+                        <p class="text-sm text-gray-600 team-description">Expert en affaires mondiales<br>PDG de TL Worldwide, Inc.<br>Expertise en investissement providentiel et gestion</p>
+                    </div>
+                    <!-- Cho Woo-Ju Auditeur -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=W.J+Cho" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Cho Woo-Ju Auditeur">
+                        <h3 class="text-xl font-bold text-deep-blue">Cho Woo-Ju</h3>
+                        <p class="text-gold font-semibold mb-2">Auditeur</p>
+                        <p class="text-sm text-gray-600 team-description">Fondateur de SPACOSA, expérience en M&A<br>Expertise en attraction d'investissements et développement commercial</p>
+                    </div>
+                </div>
+                <div class="mt-20 text-center max-w-5xl mx-auto p-10 bg-gray-50 rounded-lg border">
+                    <h3 class="text-3xl font-bold text-deep-blue mb-2">Groupe consultatif</h3>
+                     <p class="text-gray-600 mb-8">SFi fournit des solutions pratiques à tous les problèmes auxquels sont confrontées les startups<br class="hidden md:block">grâce à un réseau d'experts de premier plan de l'industrie centré sur les anciens élèves de l'Université nationale de Séoul.</p>
+
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
+                        <div class="text-center">
+                            <h4 class="text-lg font-semibold text-gold">Président</h4>
+                            <p class="text-xl font-bold text-deep-blue">Lee Jong-Su</p>
+                            <p class="text-sm text-gray-500">Actuellement professeur de coopération industrie-université<br>à l'Université nationale de Séoul<br>Expert en startups technologiques</p>
+                        </div>
+                         <div class="w-px h-16 bg-gray-300 hidden md:block"></div>
+                        <div class="text-center">
+                            <h4 class="text-lg font-semibold text-gold">Vice-président</h4>
+                            <p class="text-xl font-bold text-deep-blue">Kim Jang-Gil</p>
+                            <p class="text-sm text-gray-500">Actuellement professeur de recherche<br>à l'Université nationale de Séoul<br>Expert en startups technologiques</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full border-t border-gray-200 my-8"></div>
+
+                    <h4 class="text-xl font-semibold text-deep-blue mb-6">Groupe consultatif d'experts par domaine (Total de 20 personnes ou plus)</h4>
+                    <div class="flex flex-wrap justify-center gap-4 text-gray-700">
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Conseil en gestion (3 personnes)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Startups technologiques (2 personnes)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Investissement dans les startups (2 personnes)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Matériaux chimiques (2 personnes)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Brevets/DB (1 personne)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Logiciel (1 personne)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Fintech (1 personne)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">IA/TIC (1 personne)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">M&A (1 personne)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Droit/brevets (1 personne)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Et bien d'autres</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Stratégie d'investissement -->
+        <section id="strategy" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">STRATÉGIE D'INVESTISSEMENT</h2>
+                    <p class="mt-4 text-lg text-gray-600">Les valeurs fondamentales de SFi sont l'innovation, l'excellence, la mondialisation et la création de valeur.</p>
+                </div>
+                <!-- Quatre valeurs fondamentales -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">INNOVATION</h3>
+                        <p class="text-gray-600">Capacité à découvrir et vérifier des technologies prometteuses, développer de nouveaux marchés et résoudre des problèmes de manière innovante</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">EXCELLENCE</h3>
+                        <p class="text-gray-600">Examen professionnel des investissements, soutien systématique à la croissance et accélération différenciée</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9M3 12a9 9 0 009 9" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">MONDIALISATION</h3>
+                        <p class="text-gray-600">Soutien aux stratégies d'entrée sur les marchés mondiaux, construction de réseaux internationaux et attraction d'investissements étrangers</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">CRÉATION DE VALEUR</h3>
+                        <p class="text-gray-600">Créer une valeur durable, mener l'innovation industrielle et découvrir les moteurs de croissance future</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio -->
+        <section id="portfolio" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">PORTFOLIO</h2>
+                    <p class="mt-4 text-lg text-gray-600">Voici les entreprises innovantes qui grandissent avec SFi.</p>
+                    <p class="mt-2 text-sm text-gray-500">(Les informations sur les entreprises investies seront bientôt mises à jour.)</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Exemple de portfolio 1 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="Solution de vision IA">
+                        <h3 class="text-xl font-bold text-deep-blue">Solution de vision IA</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#IA #Big Data</p>
+                        <p class="text-gray-600">Développement de solutions de vision IA industrielles. Croissance rapide en menant des PoC avec des grandes entreprises grâce aux programmes d'investissement initial et de valorisation de SFi.</p>
+                    </div>
+                    <!-- Exemple de portfolio 2 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="Énergie de nouvelle génération">
+                        <h3 class="text-xl font-bold text-deep-blue">Énergie de nouvelle génération</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#climatetech #énergie</p>
+                        <p class="text-gray-600">Développement de technologies de recyclage de batteries usagées de nouvelle génération. Construction de partenariats avec des partenaires mondiaux grâce au réseau de SFi et préparation d'un investissement de série A.</p>
+                    </div>
+                    <!-- Exemple de portfolio 3 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="Santé numérique">
+                        <h3 class="text-xl font-bold text-deep-blue">Santé numérique</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#Bio #Santé</p>
+                        <p class="text-gray-600">Développement d'une plateforme de diagnostic des maladies rares. Accélération de la commercialisation technologique grâce au mentorat du conseil consultatif SFi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Programme d'accompagnement de startups -->
+        <section id="acceleration" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ACCOMPAGNEMENT</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFi vous accompagnera dans tous les processus de croissance au-delà d'un simple investissement.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">Perfectionnement du modèle d'affaires</h3>
+                        <p>Renforcement du cœur de votre entreprise, incluant l'analyse de marché, le pivotement BM et la validation du modèle de revenus.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">Mentorat pratique</h3>
+                        <p>Développement de compétences pratiques grâce au coaching sur les présentations IR, la rédaction et la présentation de plans de projets soutenus par le gouvernement.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">Mise en réseau</h3>
+                        <p>Fournir des opportunités de croissance, notamment attirer des investissements de suivi et se connecter avec des partenariats technologiques/commerciaux.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">Soutien de l'infrastructure de gestion</h3>
+                        <p>Fournir des conseils sur l'infrastructure de gestion essentielle pour les startups, notamment les questions juridiques, de brevets, financières et comptables.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Actualités -->
+        <section id="news" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ACTUALITÉS</h2>
+                    <p class="mt-4 text-lg text-gray-600">Vous apportant les dernières nouvelles de SFi.</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-8">
+                     <div class="p-6 border-b border-gray-200">
+                        <p class="text-sm text-gray-500 mb-1">20.05.2025 | Communiqué de presse</p>
+                        <a href="#" class="text-xl font-bold text-deep-blue hover-gold">SFi s'installe au centre d'incubation de startups de l'Université nationale de Séoul... « Prêt pour la formation complète de startups deep tech »</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact -->
+        <section id="contact" class="py-20 md:py-32 bg-deep-blue text-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-white">CONTACTEZ-NOUS</h2>
+                    <p class="mt-4 text-lg text-gray-300">SFi recherche des entrepreneurs et partenaires innovants qui ouvriront de nouveaux horizons.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <!-- Demandes via le canal KakaoTalk -->
+                    <div class="text-center">
+                         <h3 class="text-2xl font-bold text-gold mb-4">Demandes via le canal KakaoTalk</h3>
+                         <p class="text-center text-gray-300 mb-8">
+                             Si vous souhaitez une consultation plus simple et plus rapide,<br>veuillez nous contacter via le canal KakaoTalk SFi.
+                         </p>
+                              <a href="http://pf.kakao.com/_xgeTrn/chat" class="inline-flex items-center justify-center bg-yellow-400 text-gray-900 font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 transition-all text-lg">
+                             <svg class="w-7 h-7 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12c0 3.303 1.632 6.223 4.141 8.125-.03.064-.061.127-.091.191L4.25 23.333a.5.5 0 00.651.651l3.017-1.799c.097.042.195.082.294.12A9.991 9.991 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm-1.25 9.125a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5zm4.375 0a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5z"/></svg>
+                             <span>Aller au canal KakaoTalk SFi</span>
+                         </a>
+                    </div>
+
+                    <!-- Séparateur -->
+                    <div class="flex items-center my-12">
+                        <div class="flex-grow border-t border-gray-600"></div>
+                        <span class="flex-shrink mx-4 text-gray-400">OU</span>
+                        <div class="flex-grow border-t border-gray-600"></div>
+                    </div>
+
+                    <!-- Formulaire de contact -->
+                    <div class="bg-gray-50/10 p-8 sm:p-12 rounded-lg">
+                        <h3 class="text-2xl font-bold text-center text-white mb-8">Demandes d'investissement/partenariat/autres</h3>
+                        <form id="contact-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block mb-2 font-medium">Nom / Nom de l'entreprise</label>
+                                    <input type="text" id="name" name="name" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                <div>
+                                    <label for="email" class="block mb-2 font-medium">E-mail</label>
+                                    <input type="email" id="email" name="email" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                 <div>
+                                    <label for="phone" class="block mb-2 font-medium">Contact</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                <div>
+                                    <label for="inquiryType" class="block mb-2 font-medium">Type de demande</label>
+                                    <select id="inquiryType" name="inquiryType" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                        <option>Proposition d'investissement</option>
+                                        <option>Proposition de partenariat</option>
+                                        <option>Demande générale</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block mb-2 font-medium">Détails de la demande</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="w-full sm:w-auto bg-gold text-deep-blue font-bold py-3 px-10 rounded-full hover:bg-yellow-500 transition-all text-lg">
+                                    Soumettre la demande
+                                </button>
+                            </div>
+                        </form>
+                        <div id="form-status" class="text-center mt-6"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p class="font-bold text-lg text-white mb-2">Seoul Frontier Investment Co., Ltd.</p>
+            <p>PDG : Park Seong-Cheol | Numéro d'enregistrement d'entreprise : 318-88-03207</p>
+            <p>Siège social : N° 637, Seongnam-daero 1133, Jungwon-gu, Seongnam-si, Gyeonggi-do, Corée</p>
+            <p>Centre de soutien à la croissance des startups : N°1305, Gonghang-daero 186, Gangseo-gu, Séoul, Corée</p>
+            <p>E. <a href="mailto:seoulfrontier@gmail.com" class="hover-gold">seoulfrontier@gmail.com</a> | T. <a href="tel:0502-1919-0921" class="hover-gold">0502-1919-0921</a></p>
+            <p class="mt-4">&copy; 2025 Seoul Frontier Investment. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script de basculement du menu mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fermer le menu mobile lorsqu'on clique sur un lien
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Script de soumission du formulaire de contact
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = contactForm?.querySelector('button[type="submit"]');
+
+    contactForm?.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzImfJX6P6htca78NPrUPcfZ4fHFjTGlfVtwWQ2_SvtljCCle8b5OXE8gnzRwgWwHFW/exec';
+      const formData = new FormData(contactForm);
+
+      formStatus.textContent = 'Envoi en cours...';
+      formStatus.className = 'text-yellow-400';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours...';
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(res => res.json())
+        .then(data => {
+          if (data.result === 'success') {
+            formStatus.textContent = 'Votre demande a été soumise avec succès. Nous vous contacterons bientôt.';
+            formStatus.className = 'text-green-400';
+            contactForm.reset();
+          } else {
+            throw new Error(data.error || 'Unknown error');
+          }
+        })
+        .catch(err => {
+          console.error('Error!', err.message);
+          formStatus.textContent = 'Une erreur s\'est produite. Veuillez réessayer plus tard.';
+          formStatus.className = 'text-red-400';
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Soumettre la demande';
+          formStatus.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+  </script>
+</body>
+</html>
