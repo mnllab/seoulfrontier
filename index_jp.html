@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFi - Seoul Frontier Investment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 基本フォントをNoto Sans JPに設定 */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        /* セクションタイトルスタイル */
+        .section-title {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 600;
+        }
+        /* ディープブルーとゴールドのカラーテーマ */
+        .bg-deep-blue { background-color: #0d1b3e; }
+        .text-gold { color: #d4af37; }
+        .border-gold { border-color: #d4af37; }
+        .hover-gold:hover { color: #e6c667; }
+        .bg-gold { background-color: #d4af37; }
+        /* ヘッダーシャドウ効果 */
+        .header-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        /* ヒーローセクションの背景画像 */
+        #hero {
+            background-image: linear-gradient(rgba(13, 27, 62, 0.8), rgba(13, 27, 62, 0.8)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        /* 言語選択ドロップダウンスタイル */
+        .language-dropdown {
+            position: relative;
+        }
+        .language-dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: #374151;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        .dropdown-content a:hover {
+            background-color: #f3f4f6;
+            color: #d4af37;
+        }
+        .flag-icon {
+            width: 20px;
+            height: 14px;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+        /* モバイルレスポンシブ調整 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+            .company-overview-grid {
+                font-size: 0.875rem;
+            }
+            .team-description {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- ヘッダーとナビゲーション -->
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 w-full header-shadow">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-deep-blue">
+                SFi
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-600 hover-gold transition-colors">会社概要</a>
+                <a href="#team" class="text-gray-600 hover-gold transition-colors">チーム</a>
+                <a href="#strategy" class="text-gray-600 hover-gold transition-colors">投資戦略</a>
+                <a href="#portfolio" class="text-gray-600 hover-gold transition-colors">ポートフォリオ</a>
+                <a href="#acceleration" class="text-gray-600 hover-gold transition-colors">スタートアップ支援</a>
+                <a href="#news" class="text-gray-600 hover-gold transition-colors">ニュースルーム</a>
+                <a href="#contact" class="text-gray-600 hover-gold transition-colors">お問い合わせ</a>
+                <!-- 言語選択 -->
+                <div class="language-dropdown">
+                    <button class="flex items-center text-gray-600 hover-gold transition-colors">
+                        <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon">
+                        <span>日本語</span>
+                        <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="index_kr.html">
+                            <img src="https://flagcdn.com/w20/kr.png" alt="한국어" class="flag-icon inline">
+                            한국어
+                        </a>
+                        <a href="index_en.html">
+                            <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon inline">
+                            English
+                        </a>
+                        <a href="index_cn.html">
+                            <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon inline">
+                            中文
+                        </a>
+                        <a href="index_jp.html">
+                            <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon inline">
+                            日本語
+                        </a>
+                        <a href="index_fr.html">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon inline">
+                            Français
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <!-- モバイルメニューボタン -->
+            <button id="mobile-menu-btn" class="md:hidden text-deep-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover-gold">会社概要</a>
+            <a href="#team" class="block py-2 text-gray-600 hover-gold">チーム</a>
+            <a href="#strategy" class="block py-2 text-gray-600 hover-gold">投資戦略</a>
+            <a href="#portfolio" class="block py-2 text-gray-600 hover-gold">ポートフォリオ</a>
+            <a href="#acceleration" class="block py-2 text-gray-600 hover-gold">スタートアップ支援</a>
+            <a href="#news" class="block py-2 text-gray-600 hover-gold">ニュースルーム</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover-gold">お問い合わせ</a>
+            <!-- モバイル言語選択 -->
+            <div class="mt-4 pt-4 border-t border-gray-200">
+                <p class="text-sm font-medium text-gray-500 mb-2">言語選択</p>
+                <div class="space-y-2">
+                    <a href="index_kr.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/kr.png" alt="한국어" class="flag-icon">
+                        한국어
+                    </a>
+                    <a href="index_en.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon">
+                        English
+                    </a>
+                    <a href="index_cn.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon">
+                        中文
+                    </a>
+                    <a href="index_jp.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon">
+                        日本語
+                    </a>
+                    <a href="index_fr.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon">
+                        Français
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- ヒーローセクション -->
+        <section id="hero" class="text-white h-screen flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-3xl md:text-6xl font-bold mb-4 leading-tight hero-title">
+                    <span class="text-gold">ディープテックスタートアップ</span>の死角を解消し<br>
+                    <span class="text-gold">グローバルユニコーン</span>を育成するアクセラレーター
+                </h1>
+                <p class="text-base md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    ソウルフロンティア投資（SFi）は、ソウル大学校同窓生ネットワークと技術専門性を基盤に、韓国を代表する技術創業のハブを目指します。
+                </p>
+                <a href="#about" class="mt-8 inline-block bg-gold text-deep-blue font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-all">
+                    SFiについて詳しく見る
+                </a>
+            </div>
+        </section>
+        <!-- 会社概要 -->
+        <section id="about" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">会社概要</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFiは技術と創業、そして成長を繋げます。</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-base text-center text-gray-700 mb-12 leading-relaxed">
+                        ソウルフロンティア投資（SFi）は、「SNU工学技術ユニコーン発掘投資組合」の成功経験を基に、ディープテック分野の有望な初期スタートアップを発掘し、共に成長する持続可能な投資エコシステムの構築を目指して設立されました。私たちは、ソウル大学校の優秀な人材と技術力を創業と繋げ、検証された専門性とネットワークを通じて革新技術スタートアップがグローバルユニコーン企業へと成長するよう強力に支援する技術創業のハブとなります。
+                    </p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-deep-blue mb-6 text-center">企業情報</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-sm md:text-lg company-overview-grid">
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>会社名:</strong> ソウルフロンティア投資株式会社</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>代表取締役:</strong> 朴聖哲（元エンカー創業者）</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>設立日:</strong> 2025年2月</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>主要人員:</strong> 6名（役職員4名、顧問2名）</div>
+                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg col-span-1 md:col-span-2"><strong>事業内容:</strong> スタートアップ支援、投資コンサルティング、経営コンサルティング、投資組合運営など</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- チーム -->
+        <section id="team" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">チーム</h2>
+                    <p class="mt-4 text-lg text-gray-600">創業から成長まで、最高の専門家たちが共に歩みます。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <!-- 朴聖哲代表 -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.C+Park" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="朴聖哲代表取締役">
+                        <h3 class="text-xl font-bold text-deep-blue">朴聖哲</h3>
+                        <p class="text-gold font-semibold mb-2">代表取締役</p>
+                        <p class="text-sm text-gray-600 team-description">元エンカー創業者（CEO）<br>現ソウル大学校客員教授<br>経営・成長・投資戦略専門家</p>
+                    </div>
+                    <!-- 李起鍾取締役 -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=G.J+Lee" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="李起鍾取締役">
+                        <h3 class="text-xl font-bold text-deep-blue">李起鍾</h3>
+                        <p class="text-gold font-semibold mb-2">取締役</p>
+                        <p class="text-sm text-gray-600 team-description">M&A専門家<br>元ファイテック投資代表<br>財務・投資分野専門性保有</p>
+                    </div>
+                    <!-- 劉勝万取締役 -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.M+Yoo" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="劉勝万取締役">
+                        <h3 class="text-xl font-bold text-deep-blue">劉勝万</h3>
+                        <p class="text-gold font-semibold mb-2">取締役</p>
+                        <p class="text-sm text-gray-600 team-description">グローバルビジネス専門家<br>TLワールドワイド株式会社代表<br>エンジェル投資及び経営経験保有</p>
+                    </div>
+                    <!-- 趙宇州監査 -->
+                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=W.J+Cho" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="趙宇州監査">
+                        <h3 class="text-xl font-bold text-deep-blue">趙宇州</h3>
+                        <p class="text-gold font-semibold mb-2">監査</p>
+                        <p class="text-sm text-gray-600 team-description">スパコサ創業、M&A経験<br>投資誘致及び事業開発専門家</p>
+                    </div>
+                </div>
+                <div class="mt-20 text-center max-w-5xl mx-auto p-10 bg-gray-50 rounded-lg border">
+                    <h3 class="text-3xl font-bold text-deep-blue mb-2">創業成長顧問団</h3>
+                     <p class="text-gray-600 mb-8">SFiは、ソウル大学校同窓生を中心とした業界最高の専門家ネットワークを通じて<br class="hidden md:block">スタートアップが直面するすべての問題に対する実質的な解決策を提供します。</p>
+
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
+                        <div class="text-center">
+                            <h4 class="text-lg font-semibold text-gold">団長</h4>
+                            <p class="text-xl font-bold text-deep-blue">李鍾守</p>
+                            <p class="text-sm text-gray-500">現ソウル大学校産学協力教授<br>技術創業専門家</p>
+                        </div>
+                         <div class="w-px h-16 bg-gray-300 hidden md:block"></div>
+                        <div class="text-center">
+                            <h4 class="text-lg font-semibold text-gold">副団長</h4>
+                            <p class="text-xl font-bold text-deep-blue">金章吉</p>
+                            <p class="text-sm text-gray-500">現ソウル大学校研究教授<br>技術創業専門家</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full border-t border-gray-200 my-8"></div>
+
+                    <h4 class="text-xl font-semibold text-deep-blue mb-6">分野別専門顧問団（計20名以上）</h4>
+                    <div class="flex flex-wrap justify-center gap-4 text-gray-700">
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">経営コンサルティング（3名）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">技術創業（2名）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">ベンチャー投資（2名）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">化学素材（2名）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">特許・DB（1名）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">ソフトウェア（1名）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">フィンテック（1名）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">AI・ICT（1名）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">M&A（1名）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">法律・特許（1名）</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">その他多数</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 投資戦略 -->
+        <section id="strategy" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">投資戦略</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFiの核心価値は革新、卓越、グローバル、そして価値創出です。</p>
+                </div>
+                <!-- 4つの核心価値 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">革新</h3>
+                        <p class="text-gray-600">有望技術の発掘・検証、新市場開拓、革新的問題解決能力</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">卓越</h3>
+                        <p class="text-gray-600">専門投資審査、体系的成長支援、差別化されたアクセラレーション</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9M3 12a9 9 0 009 9" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">グローバル</h3>
+                        <p class="text-gray-600">グローバル市場進出戦略、国際ネットワーク構築、海外投資誘致支援</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">価値創出</h3>
+                        <p class="text-gray-600">持続可能な価値創出、産業革新リード、未来成長動力発掘</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ポートフォリオ -->
+        <section id="portfolio" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ポートフォリオ</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFiと共に成長する革新企業をご紹介します。</p>
+                    <p class="mt-2 text-sm text-gray-500">（本セクションは現在例示であり、投資企業情報は近日更新予定です。）</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- ポートフォリオ例1 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="AIビジョンソリューション">
+                        <h3 class="text-xl font-bold text-deep-blue">AIビジョンソリューション</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#AI #ビッグデータ</p>
+                        <p class="text-gray-600">産業用AIビジョンソリューション開発。SFiのシード投資とバリューアッププログラムを通じて主要大企業とPoCを進行し、急速に成長中です。</p>
+                    </div>
+                    <!-- ポートフォリオ例2 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="次世代エネルギー">
+                        <h3 class="text-xl font-bold text-deep-blue">次世代エネルギー</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#クライメートテック #エネルギー</p>
+                        <p class="text-gray-600">次世代廃バッテリーリサイクル技術開発。SFiのネットワークを通じてグローバルパートナー企業と協力関係を構築し、シリーズA投資を準備中です。</p>
+                    </div>
+                    <!-- ポートフォリオ例3 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="デジタルヘルスケア">
+                        <h3 class="text-xl font-bold text-deep-blue">デジタルヘルスケア</h3>
+                        <p class="text-sm font-semibold text-gold mb-2">#バイオ #ヘルスケア</p>
+                        <p class="text-gray-600">希少疾患診断プラットフォーム開発。SFi顧問団のメンタリングを通じて技術の実用化に拍車をかけています。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- スタートアップ支援プログラム -->
+        <section id="acceleration" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">スタートアップ支援</h2>
+                    <p class="mt-4 text-lg text-gray-600">単純な投資を超えて、成長のすべてのプロセスを共に歩みます。</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">ビジネスモデル高度化</h3>
+                        <p>市場分析、BMピボッティング、収益モデル検証など事業の核心を強化します。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">実戦型メンタリング</h3>
+                        <p>IRピッチング、政府支援事業計画書作成及び発表コーチングで実戦能力を高めます。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">ネットワーク連携</h3>
+                        <p>後続投資誘致、技術・事業パートナーシップ連結など成長の機会を提供します。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-deep-blue mb-3">経営インフラ支援</h3>
+                        <p>法律、特許、財務、会計など初期企業に必須の経営インフラをコンサルティングします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ニュースルーム -->
+        <section id="news" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ニュースルーム</h2>
+                    <p class="mt-4 text-lg text-gray-600">SFiの最新ニュースをお届けします。</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-8">
+                     <div class="p-6 border-b border-gray-200">
+                        <p class="text-sm text-gray-500 mb-1">2025.05.20 | プレスリリース</p>
+                        <a href="#" class="text-xl font-bold text-deep-blue hover-gold">SFi、ソウル大学校創業保育センター入居...「ディープテックスタートアップ育成本格化」</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- お問い合わせ -->
+        <section id="contact" class="py-20 md:py-32 bg-deep-blue text-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-white">お問い合わせ</h2>
+                    <p class="mt-4 text-lg text-gray-300">新たな地平を切り開く革新的な起業家とパートナーをお待ちしています。</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <!-- KakaoTalkチャンネルお問い合わせ -->
+                    <div class="text-center">
+                         <h3 class="text-2xl font-bold text-gold mb-4">KakaoTalkチャンネルお問い合わせ</h3>
+                         <p class="text-center text-gray-300 mb-8">
+                             より簡便で迅速な相談をご希望の場合は<br>SFi KakaoTalkチャンネルまでお問い合わせください。
+                         </p>
+                              <a href="http://pf.kakao.com/_xgeTrn/chat" class="inline-flex items-center justify-center bg-yellow-400 text-gray-900 font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 transition-all text-lg">
+                             <svg class="w-7 h-7 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12c0 3.303 1.632 6.223 4.141 8.125-.03.064-.061.127-.091.191L4.25 23.333a.5.5 0 00.651.651l3.017-1.799c.097.042.195.082.294.12A9.991 9.991 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm-1.25 9.125a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5zm4.375 0a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5z"/></svg>
+                             <span>SFi KakaoTalkチャンネルへ</span>
+                         </a>
+                    </div>
+
+                    <!-- 区切り線 -->
+                    <div class="flex items-center my-12">
+                        <div class="flex-grow border-t border-gray-600"></div>
+                        <span class="flex-shrink mx-4 text-gray-400">または</span>
+                        <div class="flex-grow border-t border-gray-600"></div>
+                    </div>
+
+                    <!-- お問い合わせフォーム -->
+                    <div class="bg-gray-50/10 p-8 sm:p-12 rounded-lg">
+                        <h3 class="text-2xl font-bold text-center text-white mb-8">投資・パートナーシップ・その他お問い合わせ</h3>
+                        <form id="contact-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block mb-2 font-medium">お名前・企業名</label>
+                                    <input type="text" id="name" name="name" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                <div>
+                                    <label for="email" class="block mb-2 font-medium">メールアドレス</label>
+                                    <input type="email" id="email" name="email" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                 <div>
+                                    <label for="phone" class="block mb-2 font-medium">お電話番号</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                </div>
+                                <div>
+                                    <label for="inquiryType" class="block mb-2 font-medium">お問い合わせ種類</label>
+                                    <select id="inquiryType" name="inquiryType" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                        <option>投資提案</option>
+                                        <option>パートナーシップ提案</option>
+                                        <option>一般お問い合わせ</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block mb-2 font-medium">お問い合わせ内容</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="w-full sm:w-auto bg-gold text-deep-blue font-bold py-3 px-10 rounded-full hover:bg-yellow-500 transition-all text-lg">
+                                    お問い合わせ送信
+                                </button>
+                            </div>
+                        </form>
+                        <div id="form-status" class="text-center mt-6"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p class="font-bold text-lg text-white mb-2">ソウルフロンティア投資株式会社</p>
+            <p>代表取締役：朴聖哲 | 事業者登録番号：318-88-03207</p>
+            <p>本社：京畿道城南市中院区城南大路1133、637号</p>
+            <p>創業成長支援協力センター：ソウル特別市江西区空港大路186、1305号</p>
+            <p>E. <a href="mailto:seoulfrontier@gmail.com" class="hover-gold">seoulfrontier@gmail.com</a> | T. <a href="tel:0502-1919-0921" class="hover-gold">0502-1919-0921</a></p>
+            <p class="mt-4">&copy; 2025 Seoul Frontier Investment. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルメニュー切り替えスクリプト
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // モバイルメニューのリンククリック時にメニューを閉じる
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // お問い合わせフォーム送信スクリプト
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = contactForm?.querySelector('button[type="submit"]');
+
+    contactForm?.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzImfJX6P6htca78NPrUPcfZ4fHFjTGlfVtwWQ2_SvtljCCle8b5OXE8gnzRwgWwHFW/exec';
+      const formData = new FormData(contactForm);
+
+      formStatus.textContent = '送信中...';
+      formStatus.className = 'text-yellow-400';
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(res => res.json())
+        .then(data => {
+          if (data.result === 'success') {
+            formStatus.textContent = 'お問い合わせが正常に受信されました。近日中にご連絡いたします。';
+            formStatus.className = 'text-green-400';
+            contactForm.reset();
+          } else {
+            throw new Error(data.error || 'Unknown error');
+          }
+        })
+        .catch(err => {
+          console.error('Error!', err.message);
+          formStatus.textContent = 'エラーが発生しました。しばらくしてから再度お試しください。';
+          formStatus.className = 'text-red-400';
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'お問い合わせ送信';
+          formStatus.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+  </script>
+</body>
+</html>
