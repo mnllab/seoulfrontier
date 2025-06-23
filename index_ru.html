@@ -46,7 +46,10 @@
             position: absolute;
             right: 0;
             background-color: white;
-            min-width: 120px;
+            min-width: 160px;
+            max-width: 220px;
+            max-height: 300px;
+            overflow-y: auto;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1000;
             border-radius: 8px;
@@ -59,6 +62,9 @@
             display: block;
             font-size: 14px;
             transition: background-color 0.2s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .dropdown-content a:hover {
             background-color: #f3f4f6;
@@ -134,6 +140,14 @@
                             <img src="https://flagcdn.com/w20/ru.png" alt="Русский" class="flag-icon inline">
                             Русский
                         </a>
+                        <a href="index_de.html">
+                            <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" class="flag-icon inline">
+                            Deutsch
+                        </a>
+                        <a href="index_es.html">
+                            <img src="https://flagcdn.com/w20/es.png" alt="Español" class="flag-icon inline">
+                            Español
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -180,6 +194,14 @@
                     <a href="index_ru.html" class="flex items-center py-1 text-gray-600">
                         <img src="https://flagcdn.com/w20/ru.png" alt="Русский" class="flag-icon">
                         Русский
+                    </a>
+                    <a href="index_de.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" class="flag-icon">
+                        Deutsch
+                    </a>
+                    <a href="index_es.html" class="flex items-center py-1 text-gray-600">
+                        <img src="https://flagcdn.com/w20/es.png" alt="Español" class="flag-icon">
+                        Español
                     </a>
                 </div>
             </div>
