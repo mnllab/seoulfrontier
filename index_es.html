@@ -78,24 +78,121 @@
         }
         /* Ajustes responsivos para móvil */
         @media (max-width: 768px) {
+            /* 단어 줄바꿈 설정 */
+            .break-words {
+                word-break: break-word;
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+            
+            /* 긴 단어 처리 */
+            .text-break {
+                word-break: break-all;
+                overflow-wrap: break-word;
+            }
+            
             .hero-title {
-                font-size: 1.875rem;
-                line-height: 2.25rem;
+                font-size: 1.5rem;
+                line-height: 2rem;
+                word-break: break-word;
+                hyphens: auto;
             }
+            
             .company-overview-grid {
-                font-size: 0.875rem;
+                font-size: 0.8rem;
+                word-break: break-word;
             }
+            
             .team-description {
-                font-size: 0.875rem;
+                font-size: 0.8rem;
+                word-break: break-word;
+                line-height: 1.3;
             }
+            
+            /* 컨테이너 패딩 조정 */
+            .mobile-container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* 텍스트 크기 조정 */
+            .mobile-text-sm {
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+            
+            .mobile-text-base {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+            
+            /* 버튼 크기 조정 */
+            .mobile-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            /* 카드 패딩 조정 */
+            .mobile-card-padding {
+                padding: 1rem;
+            }
+            
+            /* 섹션 타이틀 크기 조정 */
+            .mobile-section-title {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+            
+            /* 테이블/그리드 반응형 */
+            .mobile-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            /* 긴 이메일/URL 처리 */
+            .break-email {
+                word-break: break-all;
+                overflow-wrap: anywhere;
+            }
+        }
+        
+        /* 추가 모바일 최적화 (더 작은 화면) */
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.3rem;
+                line-height: 1.8rem;
+            }
+            
+            .mobile-section-title {
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+            }
+            
+            .mobile-text-xs {
+                font-size: 0.75rem;
+                line-height: 1.3;
+            }
+        }
+        
+        /* 전체적인 텍스트 오버플로우 방지 */
+        * {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* 특정 요소들의 오버플로우 처리 */
+        .overflow-wrap {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
         }
     </style>
 </head>
 <body class="bg-white text-gray-800">
     <!-- Encabezado y Navegación -->
     <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 w-full header-shadow">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-deep-blue">
+        <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl md:text-2xl font-bold text-deep-blue">
                 SFi
             </a>
             <nav class="hidden md:flex items-center space-x-8">
@@ -104,7 +201,6 @@
                 <a href="#strategy" class="text-gray-600 hover-gold transition-colors">Estrategia de Inversión</a>
                 <a href="#portfolio" class="text-gray-600 hover-gold transition-colors">Portafolio</a>
                 <a href="#acceleration" class="text-gray-600 hover-gold transition-colors">Aceleración de Startups</a>
-                <!-- <a href="#news" class="text-gray-600 hover-gold transition-colors">Noticias</a> -->
                 <a href="#contact" class="text-gray-600 hover-gold transition-colors">Contacto</a>
                 <!-- Selector de idioma -->
                 <div class="language-dropdown">
@@ -159,47 +255,46 @@
             </button>
         </div>
         <!-- Menú móvil -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-600 hover-gold">Acerca de SFi</a>
-            <a href="#team" class="block py-2 text-gray-600 hover-gold">Nuestro Equipo</a>
-            <a href="#strategy" class="block py-2 text-gray-600 hover-gold">Estrategia de Inversión</a>
-            <a href="#portfolio" class="block py-2 text-gray-600 hover-gold">Portafolio</a>
-            <a href="#acceleration" class="block py-2 text-gray-600 hover-gold">Aceleración de Startups</a>
-            <!-- <a href="#news" class="block py-2 text-gray-600 hover-gold">Noticias</a> -->
-            <a href="#contact" class="block py-2 text-gray-600 hover-gold">Contacto</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover-gold text-sm">Acerca de SFi</a>
+            <a href="#team" class="block py-2 text-gray-600 hover-gold text-sm">Nuestro Equipo</a>
+            <a href="#strategy" class="block py-2 text-gray-600 hover-gold text-sm">Estrategia de Inversión</a>
+            <a href="#portfolio" class="block py-2 text-gray-600 hover-gold text-sm">Portafolio</a>
+            <a href="#acceleration" class="block py-2 text-gray-600 hover-gold text-sm">Aceleración de Startups</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover-gold text-sm">Contacto</a>
             <!-- Selector de idioma móvil -->
             <div class="mt-4 pt-4 border-t border-gray-200">
-                <p class="text-sm font-medium text-gray-500 mb-2">Idioma</p>
-                <div class="space-y-2">
-                    <a href="index_kr.html" class="flex items-center py-1 text-gray-600">
+                <p class="text-xs font-medium text-gray-500 mb-2">Idioma</p>
+                <div class="space-y-1">
+                    <a href="index_kr.html" class="flex items-center py-1 text-gray-600 text-sm">
                         <img src="https://flagcdn.com/w20/kr.png" alt="한국어" class="flag-icon">
                         한국어
                     </a>
-                    <a href="index_en.html" class="flex items-center py-1 text-gray-600">
+                    <a href="index_en.html" class="flex items-center py-1 text-gray-600 text-sm">
                         <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon">
                         English
                     </a>
-                    <a href="index_cn.html" class="flex items-center py-1 text-gray-600">
+                    <a href="index_cn.html" class="flex items-center py-1 text-gray-600 text-sm">
                         <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon">
                         中文
                     </a>
-                    <a href="index_jp.html" class="flex items-center py-1 text-gray-600">
+                    <a href="index_jp.html" class="flex items-center py-1 text-gray-600 text-sm">
                         <img src="https://flagcdn.com/w20/jp.png" alt="日本語" class="flag-icon">
                         日本語
                     </a>
-                    <a href="index_fr.html" class="flex items-center py-1 text-gray-600">
+                    <a href="index_fr.html" class="flex items-center py-1 text-gray-600 text-sm">
                         <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon">
                         Français
                     </a>
-                    <a href="index_ru.html" class="flex items-center py-1 text-gray-600">
+                    <a href="index_ru.html" class="flex items-center py-1 text-gray-600 text-sm">
                         <img src="https://flagcdn.com/w20/ru.png" alt="Русский" class="flag-icon">
                         Русский
                     </a>
-                    <a href="index_de.html" class="flex items-center py-1 text-gray-600">
+                    <a href="index_de.html" class="flex items-center py-1 text-gray-600 text-sm">
                         <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" class="flag-icon">
                         Deutsch
                     </a>
-                    <a href="index_es.html" class="flex items-center py-1 text-gray-600">
+                    <a href="index_es.html" class="flex items-center py-1 text-gray-600 text-sm">
                         <img src="https://flagcdn.com/w20/es.png" alt="Español" class="flag-icon">
                         Español
                     </a>
@@ -210,305 +305,290 @@
     <main>
         <!-- Sección Hero -->
         <section id="hero" class="text-white h-screen flex items-center justify-center">
-            <div class="text-center px-4">
-                <h1 class="text-3xl md:text-6xl font-bold mb-4 leading-tight hero-title">
+            <div class="text-center px-4 mobile-container">
+                <h1 class="text-2xl md:text-6xl font-bold mb-4 leading-tight hero-title break-words">
                     Un acelerador que elimina los puntos ciegos en <span class="text-gold">startups de tecnología profunda</span> y fomenta <span class="text-gold">unicornios globales</span>
                 </h1>
-                <p class="text-base md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-sm md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mobile-text-base break-words">
                     Seoul Frontier Investment (SFi) es un hub líder de startups tecnológicas en Corea basado en la red de exalumnos de la Universidad Nacional de Seúl y la experiencia tecnológica.
                 </p>
-                <a href="#about" class="mt-8 inline-block bg-gold text-deep-blue font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-all">
+                <a href="#about" class="mt-6 md:mt-8 inline-block bg-gold text-deep-blue font-bold py-2 px-6 md:py-3 md:px-8 rounded-full hover:bg-yellow-500 transition-all mobile-btn">
                     Conocer más sobre SFi
                 </a>
             </div>
         </section>
         <!-- Acerca de SFi -->
-        <section id="about" class="py-20 md:py-32 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ACERCA DE SFi</h2>
-                    <p class="mt-4 text-lg text-gray-600">SFi conecta tecnología, emprendimiento y crecimiento.</p>
+        <section id="about" class="py-16 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-4 md:px-6 mobile-container">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-5xl section-title text-deep-blue mobile-section-title">ACERCA DE SFi</h2>
+                    <p class="mt-4 text-base md:text-lg text-gray-600 mobile-text-base">SFi conecta tecnología, emprendimiento y crecimiento.</p>
                 </div>
                 <div class="max-w-4xl mx-auto">
-                    <p class="text-base text-center text-gray-700 mb-12 leading-relaxed">
+                    <p class="text-sm md:text-base text-center text-gray-700 mb-8 md:mb-12 leading-relaxed mobile-text-base break-words">
                         Seoul Frontier Investment (SFi) fue establecido basándose en la experiencia exitosa del 'Consorcio de Inversión para el Descubrimiento de Unicornios de Tecnología de Ingeniería de SNU' para descubrir startups prometedoras en etapas tempranas en el campo de la tecnología profunda y construir un ecosistema de inversión sostenible que crezca junto. SFi se convertirá en un hub para startups tecnológicas que conecta el excelente talento y poder tecnológico de la Universidad Nacional de Seúl con startups, y apoya fuertemente a startups tecnológicas innovadoras para crecer en empresas unicornio globales a través de experiencia y redes probadas.
                     </p>
-                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-                        <h3 class="text-2xl font-bold text-deep-blue mb-6 text-center">Resumen de la Empresa</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-sm md:text-lg company-overview-grid">
-                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>Nombre de la Empresa:</strong> Seoul Frontier Investment Co., Ltd.</div>
-                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>CEO:</strong> Park Sung-Chul (fundador de EnCar)</div>
-                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>Establecida:</strong> Feb. 2025</div>
-                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg"><strong>Personal Clave:</strong> 6 personas (4 ejecutivos y personal, 2 asesores)</div>
-                            <div class="p-3 md:p-4 bg-gray-50 rounded-lg col-span-1 md:col-span-2"><strong>Tipo de Negocio:</strong> Apoyo a startups, consultoría de inversión, consultoría de gestión, gestión de fondos de inversión, etc.</div>
+                    <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 mobile-card-padding">
+                        <h3 class="text-xl md:text-2xl font-bold text-deep-blue mb-4 md:mb-6 text-center">Resumen de la Empresa</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 text-xs md:text-lg company-overview-grid mobile-grid">
+                            <div class="p-2 md:p-4 bg-gray-50 rounded-lg break-words"><strong>Nombre de la Empresa:</strong> Seoul Frontier Investment Co., Ltd.</div>
+                            <div class="p-2 md:p-4 bg-gray-50 rounded-lg break-words"><strong>CEO:</strong> Park Sung-Chul (fundador de EnCar)</div>
+                            <div class="p-2 md:p-4 bg-gray-50 rounded-lg break-words"><strong>Establecida:</strong> Feb. 2025</div>
+                            <div class="p-2 md:p-4 bg-gray-50 rounded-lg break-words"><strong>Personal Clave:</strong> 6 personas (4 ejecutivos y personal, 2 asesores)</div>
+                            <div class="p-2 md:p-4 bg-gray-50 rounded-lg col-span-1 md:col-span-2 break-words"><strong>Tipo de Negocio:</strong> Apoyo a startups, consultoría de inversión, consultoría de gestión, gestión de fondos de inversión, etc.</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Nuestro Equipo -->
-        <section id="team" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">NUESTRO EQUIPO</h2>
-                    <p class="mt-4 text-lg text-gray-600">Los mejores expertos estarán contigo desde el startup hasta el crecimiento.</p>
+        <section id="team" class="py-16 md:py-32">
+            <div class="container mx-auto px-4 md:px-6 mobile-container">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-5xl section-title text-deep-blue mobile-section-title">NUESTRO EQUIPO</h2>
+                    <p class="mt-4 text-base md:text-lg text-gray-600 mobile-text-base break-words">Los mejores expertos estarán contigo desde el startup hasta el crecimiento.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
                     <!-- Park Seong-Cheol CEO -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
-                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.C+Park" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Park Seong-Cheol CEO">
-                        <h3 class="text-xl font-bold text-deep-blue">Park Seong-Cheol</h3>
+                    <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform mobile-card-padding">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.C+Park" class="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Park Seong-Cheol CEO">
+                        <h3 class="text-lg md:text-xl font-bold text-deep-blue break-words">Park Seong-Cheol</h3>
                         <p class="text-gold font-semibold mb-2">CEO</p>
-                        <p class="text-sm text-gray-600 team-description">Fundador (CEO) de EnCar<br>Actualmente profesor visitante en la Universidad Nacional de Seúl<br>Experto en Gestión/Crecimiento/Estrategia de Inversión</p>
+                        <p class="text-xs md:text-sm text-gray-600 team-description break-words">Fundador (CEO) de EnCar<br>Actualmente profesor visitante en la Universidad Nacional de Seúl<br>Experto en Gestión/Crecimiento/Estrategia de Inversión</p>
                     </div>
                     <!-- Lee Ki-Jong Director -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
-                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=G.J+Lee" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Lee Ki-Jong Director">
-                        <h3 class="text-xl font-bold text-deep-blue">Lee Ki-Jong</h3>
+                    <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform mobile-card-padding">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=G.J+Lee" class="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Lee Ki-Jong Director">
+                        <h3 class="text-lg md:text-xl font-bold text-deep-blue break-words">Lee Ki-Jong</h3>
                         <p class="text-gold font-semibold mb-2">Director</p>
-                        <p class="text-sm text-gray-600 team-description">Experto en M&A<br>Ex CEO de Fitech Investment<br>Experiencia en finanzas/inversión</p>
+                        <p class="text-xs md:text-sm text-gray-600 team-description break-words">Experto en M&A<br>Ex CEO de Fitech Investment<br>Experiencia en finanzas/inversión</p>
                     </div>
                     <!-- Yoo Syeng-Mann Director -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
-                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.M+Yoo" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Yoo Syeng-Mann Director">
-                        <h3 class="text-xl font-bold text-deep-blue">Yoo Syeng-Mann</h3>
+                    <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform mobile-card-padding">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=S.M+Yoo" class="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Yoo Syeng-Mann Director">
+                        <h3 class="text-lg md:text-xl font-bold text-deep-blue break-words">Yoo Syeng-Mann</h3>
                         <p class="text-gold font-semibold mb-2">Director</p>
-                        <p class="text-sm text-gray-600 team-description">Experto en negocios globales<br>CEO de TL Worldwide, Inc.<br>Experiencia en inversión ángel y gestión</p>
+                        <p class="text-xs md:text-sm text-gray-600 team-description break-words">Experto en negocios globales<br>CEO de TL Worldwide, Inc.<br>Experiencia en inversión ángel y gestión</p>
                     </div>
                     <!-- Cho Woo-Ju Auditor -->
-                    <div class="bg-gray-50 p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform">
-                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=W.J+Cho" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Cho Woo-Ju Auditor">
-                        <h3 class="text-xl font-bold text-deep-blue">Cho Woo-Ju</h3>
+                    <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center shadow-md transform hover:-translate-y-2 transition-transform mobile-card-padding">
+                        <img src="https://placehold.co/200x200/0d1b3e/d4af37?text=W.J+Cho" class="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-4 border-4 border-gold" alt="Cho Woo-Ju Auditor">
+                        <h3 class="text-lg md:text-xl font-bold text-deep-blue break-words">Cho Woo-Ju</h3>
                         <p class="text-gold font-semibold mb-2">Auditor</p>
-                        <p class="text-sm text-gray-600 team-description">Fundador de SPACOSA, experiencia en M&A<br>Experiencia en atracción de inversión y desarrollo de negocios</p>
+                        <p class="text-xs md:text-sm text-gray-600 team-description break-words">Fundador de SPACOSA, experiencia en M&A<br>Experiencia en atracción de inversión y desarrollo de negocios</p>
                     </div>
                 </div>
-                <div class="mt-20 text-center max-w-5xl mx-auto p-10 bg-gray-50 rounded-lg border">
-                    <h3 class="text-3xl font-bold text-deep-blue mb-2">Grupo Asesor</h3>
-                     <p class="text-gray-600 mb-8">SFi proporciona soluciones prácticas a todos los problemas que enfrentan las startups<br class="hidden md:block">a través de una red de expertos líderes en la industria centrada en exalumnos de la Universidad Nacional de Seúl.</p>
-                    <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
+                <div class="mt-16 md:mt-20 text-center max-w-5xl mx-auto p-6 md:p-10 bg-gray-50 rounded-lg border mobile-card-padding">
+                    <h3 class="text-2xl md:text-3xl font-bold text-deep-blue mb-2 break-words">Grupo Asesor</h3>
+                     <p class="text-gray-600 mb-6 md:mb-8 mobile-text-base break-words">SFi proporciona soluciones prácticas a todos los problemas que enfrentan las startups<br class="hidden md:block">a través de una red de expertos líderes en la industria centrada en exalumnos de la Universidad Nacional de Seúl.</p>
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 mb-8 md:mb-10">
                         <div class="text-center">
-                            <h4 class="text-lg font-semibold text-gold">Presidente</h4>
-                            <p class="text-xl font-bold text-deep-blue">Lee Jong-Su</p>
-                            <p class="text-sm text-gray-500">Actualmente Profesor de Cooperación<br>Universidad-Industria de la Universidad Nacional de Seúl<br>Experto en startups tecnológicas</p>
+                            <h4 class="text-base md:text-lg font-semibold text-gold">Presidente</h4>
+                            <p class="text-lg md:text-xl font-bold text-deep-blue break-words">Lee Jong-Su</p>
+                            <p class="text-xs md:text-sm text-gray-500 mobile-text-sm break-words">Actualmente Profesor de Cooperación<br>Universidad-Industria de la Universidad Nacional de Seúl<br>Experto en startups tecnológicas</p>
                         </div>
                          <div class="w-px h-16 bg-gray-300 hidden md:block"></div>
                         <div class="text-center">
-                            <h4 class="text-lg font-semibold text-gold">Vicepresidente</h4>
-                            <p class="text-xl font-bold text-deep-blue">Kim Jang-Gil</p>
-                            <p class="text-sm text-gray-500">Actualmente Profesor de Investigación<br>de la Universidad Nacional de Seúl<br>Experto en startups tecnológicas</p>
+                            <h4 class="text-base md:text-lg font-semibold text-gold">Vicepresidente</h4>
+                            <p class="text-lg md:text-xl font-bold text-deep-blue break-words">Kim Jang-Gil</p>
+                            <p class="text-xs md:text-sm text-gray-500 mobile-text-sm break-words">Actualmente Profesor de Investigación<br>de la Universidad Nacional de Seúl<br>Experto en startups tecnológicas</p>
                         </div>
                     </div>
                     
-                    <div class="w-full border-t border-gray-200 my-8"></div>
-                    <h4 class="text-xl font-semibold text-deep-blue mb-6">Grupo Asesor Experto por Campo (Total de 20 o más)</h4>
-                    <div class="flex flex-wrap justify-center gap-4 text-gray-700">
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Consultoría de gestión (3 personas)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Startups tecnológicas (2 personas)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Inversión de riesgo (2 personas)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Materiales químicos (2 personas)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Patentes/DB (1 persona)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Software (1 persona)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Fintech (1 persona)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">IA/TIC (1 persona)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">M&A (1 persona)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Derecho/patentes (1 persona)</span>
-                        <span class="bg-white border border-gray-200 rounded-full px-4 py-1 text-sm">Y muchos otros</span>
+                    <div class="w-full border-t border-gray-200 my-6 md:my-8"></div>
+                    <h4 class="text-lg md:text-xl font-semibold text-deep-blue mb-4 md:mb-6 break-words">Grupo Asesor Experto por Campo (Total de 20 o más)</h4>
+                    <div class="flex flex-wrap justify-center gap-2 md:gap-4 text-gray-700">
+                        <span class="bg-white border border-gray-200 rounded-full px-2 py-1 text-xs md:text-sm mobile-text-xs break-words">Consultoría de gestión (3 personas)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-2 py-1 text-xs md:text-sm mobile-text-xs break-words">Startups tecnológicas (2 personas)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-2 py-1 text-xs md:text-sm mobile-text-xs break-words">Inversión de riesgo (2 personas)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-2 py-1 text-xs md:text-sm mobile-text-xs break-words">Materiales químicos (2 personas)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-2 py-1 text-xs md:text-sm mobile-text-xs break-words">Patentes/DB (1 persona)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-2 py-1 text-xs md:text-sm mobile-text-xs break-words">Software (1 persona)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-2 py-1 text-xs md:text-sm mobile-text-xs break-words">Fintech (1 persona)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-2 py-1 text-xs md:text-sm mobile-text-xs break-words">IA/TIC (1 persona)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-2 py-1 text-xs md:text-sm mobile-text-xs break-words">M&A (1 persona)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-2 py-1 text-xs md:text-sm mobile-text-xs break-words">Derecho/patentes (1 persona)</span>
+                        <span class="bg-white border border-gray-200 rounded-full px-2 py-1 text-xs md:text-sm mobile-text-xs break-words">Y muchos otros</span>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Estrategia de Inversión -->
-        <section id="strategy" class="py-20 md:py-32 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ESTRATEGIA DE INVERSIÓN</h2>
-                    <p class="mt-4 text-lg text-gray-600">Los valores fundamentales de SFi son innovación, excelencia, globalidad y creación de valor.</p>
+        <section id="strategy" class="py-16 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-4 md:px-6 mobile-container">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-5xl section-title text-deep-blue mobile-section-title">ESTRATEGIA DE INVERSIÓN</h2>
+                    <p class="mt-4 text-base md:text-lg text-gray-600 mobile-text-base break-words">Los valores fundamentales de SFi son innovación, excelencia, globalidad y creación de valor.</p>
                 </div>
                 <!-- Cuatro Valores Fundamentales -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="p-6 text-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <div class="p-4 md:p-6 text-center mobile-card-padding">
+                        <div class="flex items-center justify-center h-12 w-12 md:h-16 md:w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">INNOVACIÓN</h3>
-                        <p class="text-gray-600">Capacidad para descubrir y verificar tecnologías prometedoras, desarrollar nuevos mercados y resolver problemas de manera innovadora</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-2 break-words">INNOVACIÓN</h3>
+                        <p class="text-gray-600 mobile-text-base break-words">Capacidad para descubrir y verificar tecnologías prometedoras, desarrollar nuevos mercados y resolver problemas de manera innovadora</p>
                     </div>
-                    <div class="p-6 text-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <div class="p-4 md:p-6 text-center mobile-card-padding">
+                        <div class="flex items-center justify-center h-12 w-12 md:h-16 md:w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">EXCELENCIA</h3>
-                        <p class="text-gray-600">Revisión profesional de inversiones, apoyo sistemático de crecimiento y aceleración diferenciada</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-2 break-words">EXCELENCIA</h3>
+                        <p class="text-gray-600 mobile-text-base break-words">Revisión profesional de inversiones, apoyo sistemático de crecimiento y aceleración diferenciada</p>
                     </div>
-                    <div class="p-6 text-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9M3 12a9 9 0 009 9" /></svg>
+                    <div class="p-4 md:p-6 text-center mobile-card-padding">
+                        <div class="flex items-center justify-center h-12 w-12 md:h-16 md:w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9M3 12a9 9 0 009 9" /></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">GLOBALIDAD</h3>
-                        <p class="text-gray-600">Apoyo para estrategias de entrada al mercado global, construcción de redes internacionales y atracción de inversión extranjera</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-2 break-words">GLOBALIDAD</h3>
+                        <p class="text-gray-600 mobile-text-base break-words">Apoyo para estrategias de entrada al mercado global, construcción de redes internacionales y atracción de inversión extranjera</p>
                     </div>
-                    <div class="p-6 text-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                    <div class="p-4 md:p-6 text-center mobile-card-padding">
+                        <div class="flex items-center justify-center h-12 w-12 md:h-16 md:w-16 rounded-full bg-gold text-deep-blue mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">CREACIÓN DE VALOR</h3>
-                        <p class="text-gray-600">Creación de valor sostenible, liderazgo en innovación industrial y descubrimiento de motores de crecimiento futuro</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-2 break-words">CREACIÓN DE VALOR</h3>
+                        <p class="text-gray-600 mobile-text-base break-words">Creación de valor sostenible, liderazgo en innovación industrial y descubrimiento de motores de crecimiento futuro</p>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Portafolio -->
-        <section id="portfolio" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">PORTAFOLIO</h2>
-                    <p class="mt-4 text-lg text-gray-600">Aquí están las empresas innovadoras que crecen con SFi.</p>
-                    <p class="mt-2 text-sm text-gray-500">(La información de las empresas en las que se invierte se actualizará pronto.)</p>
+        <section id="portfolio" class="py-16 md:py-32">
+            <div class="container mx-auto px-4 md:px-6 mobile-container">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-5xl section-title text-deep-blue mobile-section-title">PORTAFOLIO</h2>
+                    <p class="mt-4 text-base md:text-lg text-gray-600 mobile-text-base break-words">Aquí están las empresas innovadoras que crecen con SFi.</p>
+                    <p class="mt-2 text-sm text-gray-500 mobile-text-sm break-words">(La información de las empresas en las que se invierte se actualizará pronto.)</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <!-- Ejemplo de Elemento del Portafolio 1 -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="Solución de Visión IA">
-                        <h3 class="text-xl font-bold text-deep-blue">Solución de Visión IA</h3>
-                        <p class="text-sm font-semibold text-gold mb-2">#IA #Big Data</p>
-                        <p class="text-gray-600">Desarrollo de soluciones de visión IA industrial. Creciendo rápidamente mediante la realización de PoC con grandes corporaciones a través de la inversión semilla y programas de valor agregado de SFi.</p>
+                    <div class="bg-gray-50 p-4 md:p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform mobile-card-padding">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" class="w-full h-32 md:h-40 object-cover rounded-md mb-4" alt="Solución de Visión IA">
+                        <h3 class="text-lg md:text-xl font-bold text-deep-blue break-words">Solución de Visión IA</h3>
+                        <p class="text-xs md:text-sm font-semibold text-gold mb-2 break-words">#IA #Big Data</p>
+                        <p class="text-gray-600 mobile-text-base break-words">Desarrollo de soluciones de visión IA industrial. Creciendo rápidamente mediante la realización de PoC con grandes corporaciones a través de la inversión semilla y programas de valor agregado de SFi.</p>
                     </div>
                     <!-- Ejemplo de Elemento del Portafolio 2 -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="Energía de Nueva Generación">
-                        <h3 class="text-xl font-bold text-deep-blue">Energía de Nueva Generación</h3>
-                        <p class="text-sm font-semibold text-gold mb-2">#climatetech #energía</p>
-                        <p class="text-gray-600">Desarrollo de tecnología de reciclaje de baterías de desecho de nueva generación. Construyendo asociaciones con socios globales a través de la red de SFi y preparándose para inversión Serie A.</p>
+                    <div class="bg-gray-50 p-4 md:p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform mobile-card-padding">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2070&auto=format&fit=crop" class="w-full h-32 md:h-40 object-cover rounded-md mb-4" alt="Energía de Nueva Generación">
+                        <h3 class="text-lg md:text-xl font-bold text-deep-blue break-words">Energía de Nueva Generación</h3>
+                        <p class="text-xs md:text-sm font-semibold text-gold mb-2 break-words">#climatetech #energía</p>
+                        <p class="text-gray-600 mobile-text-base break-words">Desarrollo de tecnología de reciclaje de baterías de desecho de nueva generación. Construyendo asociaciones con socios globales a través de la red de SFi y preparándose para inversión Serie A.</p>
                     </div>
                     <!-- Ejemplo de Elemento del Portafolio 3 -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" class="w-full h-40 object-cover rounded-md mb-4" alt="Salud Digital">
-                        <h3 class="text-xl font-bold text-deep-blue">Salud Digital</h3>
-                        <p class="text-sm font-semibold text-gold mb-2">#Bio #Salud</p>
-                        <p class="text-gray-600">Desarrollo de una plataforma de diagnóstico de enfermedades raras. Acelerando la comercialización de tecnología a través de la mentoría del Consejo Asesor de SFi.</p>
+                    <div class="bg-gray-50 p-4 md:p-6 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform mobile-card-padding">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" class="w-full h-32 md:h-40 object-cover rounded-md mb-4" alt="Salud Digital">
+                        <h3 class="text-lg md:text-xl font-bold text-deep-blue break-words">Salud Digital</h3>
+                        <p class="text-xs md:text-sm font-semibold text-gold mb-2 break-words">#Bio #Salud</p>
+                        <p class="text-gray-600 mobile-text-base break-words">Desarrollo de una plataforma de diagnóstico de enfermedades raras. Acelerando la comercialización de tecnología a través de la mentoría del Consejo Asesor de SFi.</p>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Programa de Apoyo a Startups -->
-        <section id="acceleration" class="py-20 md:py-32 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">ACELERACIÓN DE STARTUPS</h2>
-                    <p class="mt-4 text-lg text-gray-600">SFi te acompañará a través de todos los procesos de crecimiento más allá de la simple inversión.</p>
+        <section id="acceleration" class="py-16 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-4 md:px-6 mobile-container">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-5xl section-title text-deep-blue mobile-section-title">ACELERACIÓN DE STARTUPS</h2>
+                    <p class="mt-4 text-base md:text-lg text-gray-600 mobile-text-base break-words">SFi te acompañará a través de todos los procesos de crecimiento más allá de la simple inversión.</p>
                 </div>
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-deep-blue mb-3">Mejora del Modelo de Negocio</h3>
-                        <p>Fortalecimiento del núcleo de tu negocio, incluyendo análisis de mercado, pivoteo del modelo de negocio y validación del modelo de ingresos.</p>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    <div class="bg-white p-4 md:p-6 rounded-lg shadow-md mobile-card-padding">
+                        <h3 class="text-lg md:text-xl font-bold text-deep-blue mb-3 break-words">Mejora del Modelo de Negocio</h3>
+                        <p class="mobile-text-base break-words">Fortalecimiento del núcleo de tu negocio, incluyendo análisis de mercado, pivoteo del modelo de negocio y validación del modelo de ingresos.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-deep-blue mb-3">Mentoría Práctica</h3>
-                        <p>Desarrollo de habilidades prácticas a través de coaching en presentaciones de IR, redacción y presentación de planes de proyectos apoyados por el gobierno.</p>
+                    <div class="bg-white p-4 md:p-6 rounded-lg shadow-md mobile-card-padding">
+                        <h3 class="text-lg md:text-xl font-bold text-deep-blue mb-3 break-words">Mentoría Práctica</h3>
+                        <p class="mobile-text-base break-words">Desarrollo de habilidades prácticas a través de coaching en presentaciones de IR, redacción y presentación de planes de proyectos apoyados por el gobierno.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-deep-blue mb-3">Redes</h3>
-                        <p>Proporcionar oportunidades de crecimiento, incluyendo la atracción de inversiones de seguimiento y la conexión con asociaciones tecnológicas/empresariales.</p>
+                    <div class="bg-white p-4 md:p-6 rounded-lg shadow-md mobile-card-padding">
+                        <h3 class="text-lg md:text-xl font-bold text-deep-blue mb-3 break-words">Redes</h3>
+                        <p class="mobile-text-base break-words">Proporcionar oportunidades de crecimiento, incluyendo la atracción de inversiones de seguimiento y la conexión con asociaciones tecnológicas/empresariales.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-deep-blue mb-3">Apoyo de Infraestructura de Gestión</h3>
-                        <p>Asesoramiento sobre infraestructura de gestión esencial para startups, incluyendo asuntos legales, de patentes, financieros y contables.</p>
+                    <div class="bg-white p-4 md:p-6 rounded-lg shadow-md mobile-card-padding">
+                        <h3 class="text-lg md:text-xl font-bold text-deep-blue mb-3 break-words">Apoyo de Infraestructura de Gestión</h3>
+                        <p class="mobile-text-base break-words">Asesoramiento sobre infraestructura de gestión esencial para startups, incluyendo asuntos legales, de patentes, financieros y contables.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Noticias -->
-        <!-- <section id="news" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-deep-blue">NOTICIAS</h2>
-                    <p class="mt-4 text-lg text-gray-600">Trayéndote las últimas noticias de SFi.</p>
-                </div>
-                <div class="max-w-4xl mx-auto space-y-8">
-                     <div class="p-6 border-b border-gray-200">
-                        <p class="text-sm text-gray-500 mb-1">20.05.2025 | Comunicado de Prensa</p>
-                        <a href="#" class="text-xl font-bold text-deep-blue hover-gold">SFi se traslada al Centro de Incubación de Startups de la Universidad Nacional de Seúl... "Listo para el fomento integral de startups de tecnología profunda"</a>
-                    </div>
-                </div>
-            </div>
-        </section> -->
         <!-- Contacto -->
-        <section id="contact" class="py-20 md:py-32 bg-deep-blue text-white">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl section-title text-white">CONTÁCTANOS</h2>
-                    <p class="mt-4 text-lg text-gray-300">SFi busca emprendedores innovadores y socios que abrirán nuevos horizontes.</p>
+        <section id="contact" class="py-16 md:py-32 bg-deep-blue text-white">
+            <div class="container mx-auto px-4 md:px-6 mobile-container">
+                 <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-5xl section-title text-white mobile-section-title">CONTÁCTANOS</h2>
+                    <p class="mt-4 text-base md:text-lg text-gray-300 mobile-text-base break-words">SFi busca emprendedores innovadores y socios que abrirán nuevos horizontes.</p>
                 </div>
                 <div class="max-w-4xl mx-auto">
                     <!-- Consulta por Canal de KakaoTalk -->
                     <div class="text-center">
-                         <h3 class="text-2xl font-bold text-gold mb-4">Consultas a través del canal de KakaoTalk</h3>
-                         <p class="text-center text-gray-300 mb-8">
-                             Si deseas una consulta más simple y rápida,<br>por favor contáctanos a través del canal de KakaoTalk de SFi.
+                         <h3 class="text-xl md:text-2xl font-bold text-gold mb-4 break-words">Consultas a través del canal de KakaoTalk</h3>
+                         <p class="text-center text-gray-300 mb-6 md:mb-8 mobile-text-base break-words">
+                             Si deseas una consulta más simple y rápida,<br class="hidden md:block">por favor contáctanos a través del canal de KakaoTalk de SFi.
                          </p>
-                              <a href="http://pf.kakao.com/_xgeTrn/chat" class="inline-flex items-center justify-center bg-yellow-400 text-gray-900 font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 transition-all text-lg">
-                             <svg class="w-7 h-7 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12c0 3.303 1.632 6.223 4.141 8.125-.03.064-.061.127-.091.191L4.25 23.333a.5.5 0 00.651.651l3.017-1.799c.097.042.195.082.294.12A9.991 9.991 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm-1.25 9.125a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5zm4.375 0a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5z"/></svg>
+                         <a href="http://pf.kakao.com/_xgeTrn/chat" class="inline-flex items-center justify-center bg-yellow-400 text-gray-900 font-bold py-3 px-6 md:py-4 md:px-8 rounded-lg hover:bg-yellow-500 transition-all text-base md:text-lg mobile-btn break-words">
+                             <svg class="w-5 h-5 md:w-7 md:h-7 mr-2 md:mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12c0 3.303 1.632 6.223 4.141 8.125-.03.064-.061.127-.091.191L4.25 23.333a.5.5 0 00.651.651l3.017-1.799c.097.042.195.082.294.12A9.991 9.991 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm-1.25 9.125a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5zm4.375 0a.625.625 0 110-1.25h2.5a.625.625 0 110 1.25h-2.5z"/></svg>
                              <span>Ir al Canal de KakaoTalk de SFi</span>
                          </a>
                     </div>
                     <!-- Divisor -->
-                    <div class="flex items-center my-12">
+                    <div class="flex items-center my-10 md:my-12">
                         <div class="flex-grow border-t border-gray-600"></div>
                         <span class="flex-shrink mx-4 text-gray-400">O</span>
                         <div class="flex-grow border-t border-gray-600"></div>
                     </div>
                     <!-- Formulario de Contacto -->
-                    <div class="bg-gray-50/10 p-8 sm:p-12 rounded-lg">
-                        <h3 class="text-2xl font-bold text-center text-white mb-8">Consultas de Inversión/Asociación/Otras</h3>
+                    <div class="bg-gray-50/10 p-6 md:p-12 rounded-lg mobile-card-padding">
+                        <h3 class="text-xl md:text-2xl font-bold text-center text-white mb-6 md:mb-8 break-words">Consultas de Inversión/Asociación/Otras</h3>
                         <form id="contact-form">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
                                 <div>
-                                    <label for="name" class="block mb-2 font-medium">Nombre / Nombre de la Empresa</label>
-                                    <input type="text" id="name" name="name" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                    <label for="name" class="block mb-2 font-medium text-sm md:text-base break-words">Nombre / Nombre de la Empresa</label>
+                                    <input type="text" id="name" name="name" required class="w-full p-2 md:p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white text-sm md:text-base">
                                 </div>
                                 <div>
-                                    <label for="email" class="block mb-2 font-medium">Correo Electrónico</label>
-                                    <input type="email" id="email" name="email" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                    <label for="email" class="block mb-2 font-medium text-sm md:text-base break-words">Correo Electrónico</label>
+                                    <input type="email" id="email" name="email" required class="w-full p-2 md:p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white text-sm md:text-base break-email">
                                 </div>
                                  <div>
-                                    <label for="phone" class="block mb-2 font-medium">Contacto</label>
-                                    <input type="tel" id="phone" name="phone" class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                    <label for="phone" class="block mb-2 font-medium text-sm md:text-base break-words">Contacto</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full p-2 md:p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white text-sm md:text-base">
                                 </div>
                                 <div>
-                                    <label for="inquiryType" class="block mb-2 font-medium">Tipo de consulta</label>
-                                    <select id="inquiryType" name="inquiryType" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white">
+                                    <label for="inquiryType" class="block mb-2 font-medium text-sm md:text-base break-words">Tipo de consulta</label>
+                                    <select id="inquiryType" name="inquiryType" required class="w-full p-2 md:p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white text-sm md:text-base">
                                         <option>Propuesta de inversión</option>
                                         <option>Propuesta de asociación</option>
                                         <option>Consulta general</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="mb-6">
-                                <label for="message" class="block mb-2 font-medium">Detalles de la consulta</label>
-                                <textarea id="message" name="message" rows="5" required class="w-full p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white"></textarea>
+                            <div class="mb-4 md:mb-6">
+                                <label for="message" class="block mb-2 font-medium text-sm md:text-base break-words">Detalles de la consulta</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full p-2 md:p-3 bg-white/10 rounded-md border border-gray-500 focus:outline-none focus:border-gold transition-colors text-white text-sm md:text-base"></textarea>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="w-full sm:w-auto bg-gold text-deep-blue font-bold py-3 px-10 rounded-full hover:bg-yellow-500 transition-all text-lg">
+                                <button type="submit" class="w-full sm:w-auto bg-gold text-deep-blue font-bold py-2 px-6 md:py-3 md:px-10 rounded-full hover:bg-yellow-500 transition-all text-base md:text-lg mobile-btn">
                                     Enviar Consulta
                                 </button>
                             </div>
                         </form>
-                        <div id="form-status" class="text-center mt-6"></div>
+                        <div id="form-status" class="text-center mt-4 md:mt-6"></div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
     <!-- Pie de página -->
-    <footer class="bg-gray-900 text-gray-400 py-10">
-        <div class="container mx-auto px-6 text-center text-sm">
-            <p class="font-bold text-lg text-white mb-2">Seoul Frontier Investment Co., Ltd.</p>
-            <p>CEO: Park Seong-Cheol | Número de registro empresarial: 318-88-03207</p>
-            <p>Sede central: No. 637, Seongnam-daero 1133, Jungwon-gu, Seongnam-si, Gyeonggi-do, Corea</p>
-            <p>Centro de Apoyo al Crecimiento de Startups: No.1305, Gonghang-daero 186, Gangseo-gu, Seúl, Corea</p>
-            <p>E. <a href="mailto:seoulfrontier@gmail.com" class="hover-gold">seoulfrontier@gmail.com</a> | T. <a href="tel:0502-1919-0921" class="hover-gold">0502-1919-0921</a></p>
-            <p class="mt-4">&copy; 2025 Seoul Frontier Investment. Todos los derechos reservados.</p>
+    <footer class="bg-gray-900 text-gray-400 py-8 md:py-10">
+        <div class="container mx-auto px-4 md:px-6 text-center text-xs md:text-sm mobile-container">
+            <p class="font-bold text-base md:text-lg text-white mb-2 break-words">Seoul Frontier Investment Co., Ltd.</p>
+            <p class="mb-1 break-words">CEO: Park Seong-Cheol | Número de registro empresarial: 318-88-03207</p>
+            <p class="mb-1 break-words">Sede central: No. 637, Seongnam-daero 1133, Jungwon-gu, Seongnam-si, Gyeonggi-do, Corea</p>
+            <p class="mb-1 break-words">Centro de Apoyo al Crecimiento de Startups: No.1305, Gonghang-daero 186, Gangseo-gu, Seúl, Corea</p>
+            <p class="mb-2 break-words">E. <a href="mailto:seoulfrontier@gmail.com" class="hover-gold break-email">seoulfrontier@gmail.com</a> | T. <a href="tel:0502-1919-0921" class="hover-gold">0502-1919-0921</a></p>
+            <p class="mt-3 md:mt-4 break-words">&copy; 2025 Seoul Frontier Investment. Todos los derechos reservados.</p>
         </div>
     </footer>
     <script>
