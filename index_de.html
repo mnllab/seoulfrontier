@@ -78,16 +78,25 @@
         }
         /* Mobile responsive Anpassungen */
         @media (max-width: 768px) {
-            /* 단어 줄바꿈 설정 */
+            /* 강력한 단어 줄바꿈 설정 */
             .break-words {
                 word-break: break-word;
                 word-wrap: break-word;
+                overflow-wrap: break-word;
                 hyphens: auto;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
             }
             
-            /* 긴 단어 처리 */
+            /* 긴 단어 강제 처리 */
             .text-break {
                 word-break: break-all;
+                overflow-wrap: anywhere;
+            }
+            
+            /* 모든 텍스트 요소에 강제 줄바꿈 적용 */
+            * {
+                word-break: break-word;
                 overflow-wrap: break-word;
             }
             
@@ -180,6 +189,22 @@
             box-sizing: border-box;
         }
         
+        /* 네비게이션 메뉴 항목 강제 줄바꿈 */
+        nav a, .mobile-menu a {
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        /* 모바일에서 긴 단어 강제 처리 */
+        @media (max-width: 768px) {
+            nav a, .mobile-menu a, h1, h2, h3, h4, h5, h6, p, span, div {
+                word-break: break-word !important;
+                overflow-wrap: break-word !important;
+                hyphens: auto !important;
+            }
+        }
+        
         /* 특정 요소들의 오버플로우 처리 */
         .overflow-wrap {
             overflow-wrap: break-word;
@@ -198,7 +223,7 @@
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#about" class="text-gray-600 hover-gold transition-colors">Über SFi</a>
                 <a href="#team" class="text-gray-600 hover-gold transition-colors">Unser Team</a>
-                <a href="#strategy" class="text-gray-600 hover-gold transition-colors">Investitionsstrategie</a>
+                <a href="#strategy" class="text-gray-600 hover-gold transition-colors break-words">Investitionsstrategie</a>
                 <a href="#portfolio" class="text-gray-600 hover-gold transition-colors">Portfolio</a>
                 <a href="#acceleration" class="text-gray-600 hover-gold transition-colors">Startup-Förderung</a>
                 <a href="#contact" class="text-gray-600 hover-gold transition-colors">Kontakt</a>
@@ -258,7 +283,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pb-4">
             <a href="#about" class="block py-2 text-gray-600 hover-gold text-sm">Über SFi</a>
             <a href="#team" class="block py-2 text-gray-600 hover-gold text-sm">Unser Team</a>
-            <a href="#strategy" class="block py-2 text-gray-600 hover-gold text-sm">Investitionsstrategie</a>
+            <a href="#strategy" class="block py-2 text-gray-600 hover-gold text-sm break-words">Investitionsstrategie</a>
             <a href="#portfolio" class="block py-2 text-gray-600 hover-gold text-sm">Portfolio</a>
             <a href="#acceleration" class="block py-2 text-gray-600 hover-gold text-sm">Startup-Förderung</a>
             <a href="#contact" class="block py-2 text-gray-600 hover-gold text-sm">Kontakt</a>
