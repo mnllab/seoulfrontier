@@ -763,6 +763,24 @@
   @media (max-width: 880px) { .accel-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 480px) { .accel-grid { grid-template-columns: 1fr; } }
 
+
+  /* PORTFOLIO (Newsroom 하위) */
+  .portfolio { margin-top: 72px; }
+  .portfolio-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .portfolio-head h3 { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-weight: 400; font-size: 28px; color: var(--cream); word-break: keep-all; }
+  .portfolio-head span { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; }
+  .portfolio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .pf-item { background: var(--navy); padding: 28px 22px; box-shadow: inset -1px -1px 0 var(--line-soft); }
+  .pf-sector { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+  .pf-name { font-size: 18px; color: var(--cream); font-weight: 500; margin-bottom: 8px; word-break: keep-all; }
+  a.pf-item { display: block; text-decoration: none; transition: background .3s; }
+  a.pf-item:hover { background: var(--navy-soft); }
+  .pf-link { margin-top: 14px; font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.05em; color: var(--gold); }
+  .pf-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; word-break: keep-all; }
+  @media (max-width: 1080px) { .portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 640px) { .portfolio-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 420px) { .portfolio-grid { grid-template-columns: 1fr; } }
+
   /* NEWSROOM */
   .news { background: var(--navy); }
   .news-list { display: grid; gap: 1px; background: var(--line-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -940,7 +958,6 @@
     <li><a href="#fund">Fund</a></li>
     <li><a href="#programs">Programs</a></li>
     <li><a href="#news">News</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-lang">
     <span>KO</span> · EN · 中文 · 日本語
@@ -958,7 +975,7 @@
       </h1>
       <p class="hero-lead">
         서울프론티어인베스트먼트(SFi)는 서울대학교기술지주(STH)와 공동 운용사(Co-GP)로
-        STH-SFi 딥테크투자조합 1호(50억원)를 결성하며, 발굴부터 회수까지 전 주기를 아우르는
+        STH-SFi 딥테크투자조합 1호(51.3억원)를 결성하며, 발굴부터 회수까지 전 주기를 아우르는
         딥테크 액셀러레이터 플랫폼을 완성합니다.
       </p>
       <div class="hero-actions">
@@ -969,7 +986,7 @@
       <div class="meta">
         <div class="hero-meta-item">
           <span class="label">Fund I — Target</span>
-          <div class="value">₩50<small>억원</small></div>
+          <div class="value">₩51.3<small>억원</small></div>
           <div class="sub">STH-SFi 개인투자조합 1호 · 2026년 6월 결성</div>
         </div>
         <div class="hero-meta-item">
@@ -1003,7 +1020,7 @@
         <p>
           2025년 2월 5인 공동창업으로 출범한 SFi는 2026년 3월 유상증자(자본금 1.2억원)와
           창업기획자(AC) 정식 등록(제2026-16호)을 거쳐, 서울대학교기술지주(STH)와의
-          공동 운용사(Co-GP) 체제로 50억원 규모의 1호 딥테크 펀드를 결성합니다.
+          공동 운용사(Co-GP) 체제로 51.3억원 규모의 1호 딥테크 펀드를 결성합니다.
         </p>
         <p>
           서울대학교 우수한 인재·기술력과 검증된 동문 네트워크를 결합하여,
@@ -1014,7 +1031,7 @@
       <aside class="info-card">
         <h3>Corporate Profile</h3>
         <div class="info-row"><span class="key">회사명</span><span class="val">서울프론티어인베스트먼트(주)</span></div>
-        <div class="info-row"><span class="key">대표이사</span><span class="val">박성철 (前 SK엔카 창업자)</span></div>
+        <div class="info-row"><span class="key">공동대표이사</span><span class="val">박성철 · 이종수</span></div>
         <div class="info-row"><span class="key">설립일</span><span class="val">2025년 2월</span></div>
         <div class="info-row"><span class="key">자본금</span><span class="val">1.2억원<br><span style="color: var(--text-dim); font-size: 12px;">발행주식 120,000주 · 5인 공동창업</span></span></div>
         <div class="info-row"><span class="key">AC 등록</span><span class="val">제2026-16호 (중소벤처기업부)</span></div>
@@ -1030,7 +1047,7 @@
   <div class="container">
     <div class="metrics-grid">
       <div class="metric">
-        <div class="num">50<small>억</small></div>
+        <div class="num">51.3<small>억</small></div>
         <div class="label">FUND I</div>
         <div class="desc">STH-SFi 1호 펀드<br>2026년 6월 결성</div>
       </div>
@@ -1069,12 +1086,12 @@
       <div class="member">
         <div class="member-portrait">SCP</div>
         <div class="member-name">박성철</div>
-        <div class="member-role">CEO · Founder</div>
-        <div class="member-title-ko">대표이사 / 총괄 운영</div>
+        <div class="member-role">Co-CEO · Founder</div>
+        <div class="member-title-ko">공동대표이사 / 총괄 운영</div>
         <ul class="member-bio">
           <li>前 SK엔카 창업자 (CEO)</li>
           <li>SK이노베이션 출신</li>
-          <li>現 서울대학교 객원교수</li>
+          <li>現 서울대학교 산업공학과 객원교수</li>
           <li>서울대학교 산업공학 석사</li>
         </ul>
       </div>
@@ -1082,13 +1099,14 @@
       <div class="member">
         <div class="member-portrait">JSL</div>
         <div class="member-name">이종수</div>
-        <div class="member-role">Managing Partner</div>
-        <div class="member-title-ko">대표파트너 / 투자 총괄</div>
+        <div class="member-role">Co-CEO · Managing Partner</div>
+        <div class="member-title-ko">공동대표이사 / 투자 총괄</div>
         <ul class="member-bio">
           <li>前 화이텍기술투자 부사장(투자본부장)</li>
           <li>前 덕은인터라인정유㈜ 대표이사</li>
           <li>연쇄 벤처창업가 · 기업회생 전문가</li>
-          <li>現 서울대학교 산학협력 객원교수</li>
+          <li>現 서울대학교 산업공학과 객원교수</li>
+          <li>現 STH-SFi 개인투자조합 1호 대표펀드매니저</li>
         </ul>
       </div>
 
@@ -1111,6 +1129,7 @@
         <div class="member-role">Director · Compliance</div>
         <div class="member-title-ko">이사 / 준법감시인</div>
         <ul class="member-bio">
+          <li>現 STH-SFi 개인투자조합 1호 핵심운용인력</li>
           <li>前 ㈜스파코사 창업 및 Exit</li>
           <li>前 ㈜네오위즈인터넷 전략기술 실장</li>
           <li>前 ㈜엔씨소프트 사업팀장</li>
@@ -1124,7 +1143,8 @@
         <div class="member-role">Head of Mentoring</div>
         <div class="member-title-ko">멘토단장 / 멘토링 총괄</div>
         <ul class="member-bio">
-          <li>現 서울대 공학컨설팅센터 연구교수</li>
+          <li>現 서울대학교 로보틱스연구소 연구교수</li>
+          <li>前 서울대 공학컨설팅센터 연구교수</li>
           <li>前 서울대 BK 조교수</li>
           <li>前 IEMN CNRS UMR 8520 (프랑스) 연구원</li>
           <li>동경대학교 정밀공학 박사</li>
@@ -1255,7 +1275,7 @@
       <span class="eyebrow">Fund I — Inaugural</span>
       <h2>STH-SFi 개인투자조합 <em>1호.</em></h2>
       <p class="lead">
-        서울대학교기술지주(STH)와의 공동 운용사(Co-GP) 체제로 출범하는 50억원 규모의 첫 번째 딥테크 펀드.
+        서울대학교기술지주(STH)와의 공동 운용사(Co-GP) 체제로 출범하는 51.3억원 규모의 첫 번째 딥테크 펀드.
         SNU R&D 엔진 · 기술지주 투자 네트워크 · SFi 기술 전문성을 결합하여
         "From Lab to Unicorn" 전주기 투자를 실행합니다.
       </p>
@@ -1274,13 +1294,13 @@
       <div class="fund-stat-block">
         <div class="fund-stat">
           <div class="label">Target Size</div>
-          <div class="value">50<small style="font-size: 0.5em; color: var(--gold);">억원+</small></div>
-          <div class="sub">기출자 확약 20억 + 장금상선 20억<br>+ GP(파트너) 10억원 이상 출자<br><span style="color: var(--text-dim);">(서울대기술지주 + SFi)</span></div>
+          <div class="value">51.3<small style="font-size: 0.5em; color: var(--gold);">억원</small></div>
+          <div class="sub">GP(파트너) 9.5억원 출자<br><span style="color: var(--text-dim);">(서울대기술지주 + SFi)</span></div>
         </div>
         <div class="fund-stat">
           <div class="label">GP Commitment</div>
-          <div class="value">20<small style="font-size: 0.5em; color: var(--gold);">%+</small></div>
-          <div class="sub">10억원 이상 · LP와 완전한<br>이해관계 일치</div>
+          <div class="value">18.5<small style="font-size: 0.5em; color: var(--gold);">%</small></div>
+          <div class="sub">9.5억원 · LP와 완전한<br>이해관계 일치</div>
         </div>
         <div class="fund-stat">
           <div class="label">Tenor / Investment</div>
@@ -1290,7 +1310,7 @@
         <div class="fund-stat">
           <div class="label">First Closing</div>
           <div class="value">2026.06</div>
-          <div class="sub">35인 개인·법인 출자자<br>수시납 · 멀티 클로징</div>
+          <div class="sub">수시납 · 멀티 클로징</div>
         </div>
       </div>
     </div>
@@ -1435,7 +1455,7 @@
           SFi 5인 전원이 <strong style="color: var(--cream); font-weight: 500;">서울창경 · 서울대기술지주회사 · 충남창경 · 서울대 시흥캠퍼스</strong>
           4개 기관의 책임 멘토로 참여하여 발굴과 동시에 보육을 시작합니다.
         </div>
-        <div class="program-tag">5.15 마감</div>
+        <div class="program-tag">1차(상반기) 완료 · 2차 진행 중</div>
       </article>
     </div>
   </div>
@@ -1484,13 +1504,13 @@
       <a href="#" class="news-item">
         <div class="news-date">2026.06</div>
         <div class="news-cat">Fund</div>
-        <div class="news-title">STH-SFi 딥테크투자조합 1호(50억) 결성 — 서울대기술지주와 Co-GP 체제 출범</div>
+        <div class="news-title">STH-SFi 딥테크투자조합 1호(51.3억) 결성 — 서울대기술지주와 Co-GP 체제 출범</div>
         <div class="news-arrow">→</div>
       </a>
       <a href="#" class="news-item">
         <div class="news-date">2026.05</div>
         <div class="news-cat">Program</div>
-        <div class="news-title">예비·초기 유망 딥테크 팀 20팀 이상의 독점적 투자 풀(Pool) 확보를 위한 대규모 발굴 프로젝트. SFi 5인 전원이 서울창경 · 서울대기술지주회사 · 충남창경 · 서울대 시흥캠퍼스 4개 기관의 책임 멘토로 참여하여 발굴과 동시에 보육을 시작합니다.</div>
+        <div class="news-title">모두의 창업 2026 — SFi 5인 전원, 4개 기관 책임 멘토로 참여 (1차 완료 · 2차 진행 중)</div>
         <div class="news-arrow">→</div>
       </a>
       <a href="#" class="news-item">
@@ -1506,7 +1526,7 @@
         <div class="news-arrow">→</div>
       </a>
       <a href="#" class="news-item">
-        <div class="news-date">2026.02</div>
+        <div class="news-date">2026.03</div>
         <div class="news-cat">License</div>
         <div class="news-title">중소벤처기업부 창업기획자(AC) 정식 등록 — 등록번호 제2026-16호</div>
         <div class="news-arrow">→</div>
@@ -1518,57 +1538,55 @@
         <div class="news-arrow">→</div>
       </a>
     </div>
-  </div>
-</section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Contact Us</span>
-      <h2>새로운 지평을 열어갈<br><em>혁신적인 창업가와 파트너를 기다립니다.</em></h2>
-    </div>
-    <div class="contact-grid">
-<!--      <div class="contact-card">
-        <h3>카카오톡 채널 문의</h3>
-        <p>더욱 간편하고 신속한 상담을 원하시면 SFi 카카오톡 채널로 문의해 주세요. IR 자료, 출자 제안서, 보육·멘토링 상담 등 모든 문의를 응대해드립니다.</p>
-        <a href="http://pf.kakao.com/_xgeTrn/chat" class="btn primary">SFi 카카오톡 채널 바로가기 <span class="arrow">→</span></a>
-        <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--line-soft); font-size: 13px; color: var(--text-mid); line-height: 1.9;">
-          <div style="color: var(--gold); font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 0.3em; margin-bottom: 12px;">DIRECT CONTACT</div>
-          E. seoulfrontier@gmail.com
-        </div>
-      </div> -->
-      <div class="contact-card">
-        <h3>투자 · 파트너십 문의</h3>
-        <form>
-          <div class="form-group">
-            <label>이름 / 기업명</label>
-            <input type="text" required>
-          </div>
-          <div class="form-group">
-            <label>이메일</label>
-            <input type="email" required>
-          </div>
-          <div class="form-group">
-            <label>연락처</label>
-            <input type="tel">
-          </div>
-          <div class="form-group">
-            <label>문의 유형</label>
-            <select>
-              <option>LP 출자 / 펀드 참여</option>
-              <option>창업팀 IR · 투자 제안</option>
-              <option>Co-GP · 파트너십</option>
-              <option>멘토링 / 보육 신청</option>
-              <option>일반 문의</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>문의 내용</label>
-            <textarea></textarea>
-          </div>
-          <button type="submit" class="btn primary" style="width: 100%; justify-content: center;">문의 접수 <span class="arrow">→</span></button>
-        </form>
+    <div class="portfolio">
+      <div class="portfolio-head">
+        <h3>스타트업 파트너</h3>
+        <span>Portfolio · STH-SFi Fund I</span>
+      </div>
+      <div class="portfolio-grid">
+        <a class="pf-item" href="https://www.multiscale-instruments.com" target="_blank" rel="noopener">
+          <div class="pf-sector">Chip</div>
+          <div class="pf-name">멀티스케일인스트루먼트</div>
+          <div class="pf-desc">반도체 측정 장비 · 원자간력현미경(AFM)</div>
+          <div class="pf-link">multiscale-instruments.com ↗</div>
+        </a>
+        <a class="pf-item" href="https://www.mvrix.co.kr" target="_blank" rel="noopener">
+          <div class="pf-sector">Bio</div>
+          <div class="pf-name">엠브릭스</div>
+          <div class="pf-desc">mRNA 표적 전달 · 생체 내 CAR-T 신약</div>
+          <div class="pf-link">mvrix.co.kr ↗</div>
+        </a>
+        <a class="pf-item" href="https://apgreen.net" target="_blank" rel="noopener">
+          <div class="pf-sector">Energy</div>
+          <div class="pf-name">에이피그린</div>
+          <div class="pf-desc">청정수소·전력 생산 기술</div>
+          <div class="pf-link">apgreen.net ↗</div>
+        </a>
+        <a class="pf-item" href="https://morphsys.ai" target="_blank" rel="noopener">
+          <div class="pf-sector">AI</div>
+          <div class="pf-name">모프시스템즈</div>
+          <div class="pf-desc">AI 온톨로지 기반 데이터 분석</div>
+          <div class="pf-link">morphsys.ai ↗</div>
+        </a>
+        <a class="pf-item" href="https://pyloneer.com/" target="_blank" rel="noopener">
+          <div class="pf-sector">Energy · AI</div>
+          <div class="pf-name">파일러니어</div>
+          <div class="pf-desc">전력망 Grid Edge AI · 전력 파형 진단</div>
+          <div class="pf-link">pyloneer.com ↗</div>
+        </a>
+        <a class="pf-item" href="https://x-sentry.com/" target="_blank" rel="noopener">
+          <div class="pf-sector">Energy</div>
+          <div class="pf-name">엑스센트리</div>
+          <div class="pf-desc">소형모듈원자로(SMR) 안전 모니터링 센서</div>
+          <div class="pf-link">x-sentry.com ↗</div>
+        </a>
+        <a class="pf-item" href="https://sejinsa.co.kr/" target="_blank" rel="noopener">
+          <div class="pf-sector">Mobility · O2O</div>
+          <div class="pf-name">세진사</div>
+          <div class="pf-desc">아파트 주차장 비대면 출장세차 플랫폼</div>
+          <div class="pf-link">sejinsa.co.kr ↗</div>
+        </a>
       </div>
     </div>
   </div>
@@ -1584,7 +1602,7 @@
         Seoul Frontier Investment Co., Ltd.
       </p>
       <p style="font-size: 12px; color: var(--text-dim); line-height: 1.7;">
-        대표이사 박성철 · 사업자등록번호 318-88-03207<br>
+        공동대표이사 박성철 · 이종수 · 사업자등록번호 318-88-03207<br>
         창업기획자 등록 제2026-16호 (중소벤처기업부)
       </p>
     </div>
